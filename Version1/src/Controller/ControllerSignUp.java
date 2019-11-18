@@ -1,7 +1,6 @@
 package Controller;
 
 import Model.User;
-import Model.UserData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -19,11 +18,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ControllerSignUp implements Initializable{
-    @FXML private TextField tfFirstName;
-    @FXML private TextField tfLastName;
-    @FXML private TextField tfPSUEmail;
-    @FXML private PasswordField pfSUPassword;
-    @FXML private PasswordField pfSUPasswordConfirmation;
+    @FXML private TextField firstNameField;
+    @FXML private TextField lastNameField;
+    @FXML private TextField emailField;
+    @FXML private TextField phoneNumField;
+    @FXML private PasswordField passwordField;
+    @FXML private PasswordField passwordConfirmationField;
     @FXML private Button submitButton;
 
     //######################SIGNUP SCREEN###########################
@@ -32,32 +32,32 @@ public class ControllerSignUp implements Initializable{
     @FXML
     private void submitSignUp(ActionEvent event) throws IOException {
         //Special Character Verification & Screen Swap
-        if(!Controller.hasSpecialChars(tfFirstName.getText()) && !Controller.hasSpecialChars(tfLastName.getText()) && !Controller.hasSpecialChars(tfPSUEmail.getText()) && !Controller.hasSpecialChars(pfSUPassword.getText())){
+        if(!Controller.hasSpecialChars(firstNameField.getText()) && !Controller.hasSpecialChars(lastNameField.getText()) && !Controller.hasSpecialChars(emailField.getText()) && !Controller.hasSpecialChars(passwordField.getText())){
 
             //User creation and added to Database
-            User user = new User(tfFirstName.getText(),tfLastName.getText(),tfPSUEmail.getText(),pfSUPassword.getText());
+            User user = new User(firstNameField.getText(), lastNameField.getText(), emailField.getText(), passwordField.getText());
             Model.UserData userData = new Model.UserData();
             userData.addUser(user);
 
             //Screen Swap
             Controller.loadScreen("LoginScreen.fxml", event);
         }else{//Error FeedBack
-            if(Controller.hasSpecialChars(tfFirstName.getText())){
-                tfFirstName.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+            if(Controller.hasSpecialChars(firstNameField.getText())){
+                firstNameField.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
             }
-            if(Controller.hasSpecialChars(tfLastName.getText())){
-                tfLastName.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+            if(Controller.hasSpecialChars(lastNameField.getText())){
+                lastNameField.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
             }
-            if(Controller.hasSpecialChars(tfPSUEmail.getText())){
-                tfPSUEmail.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+            if(Controller.hasSpecialChars(emailField.getText())){
+                emailField.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
             }
-            if(Controller.hasSpecialChars(pfSUPassword.getText())){
-                pfSUPassword.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+            if(Controller.hasSpecialChars(passwordField.getText())){
+                passwordField.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
             }
 
-            if(!pfSUPassword.getText().equals(pfSUPasswordConfirmation.getText())){
-                pfSUPassword.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
-                pfSUPasswordConfirmation.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+            if(!passwordField.getText().equals(passwordConfirmationField.getText())){
+                passwordField.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+                passwordConfirmationField.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
             }
         }
     }

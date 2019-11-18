@@ -21,8 +21,8 @@ public class ControllerLogin implements Initializable{
 
     @FXML private Button loginButton;
     @FXML private Button signupButton;
-    @FXML private TextField tfUsername;
-    @FXML private PasswordField pfPassword;
+    @FXML private TextField usernameField;
+    @FXML private PasswordField passwordField;
 
     //######################LOGIN SCREEN###########################
 
@@ -36,14 +36,14 @@ public class ControllerLogin implements Initializable{
         Model.UserData userData = new UserData();
 //        Model.StudyGroupData studyGroupData = new StudyGroupData();
 
-        if (!userData.searchUsersData(tfUsername.getText()).getUsername().isEmpty() && userData.searchUsersData(tfUsername.getText()).getUsername().equals(tfUsername.getText()) && userData.searchUsersData(tfUsername.getText()).getPassword().equals(pfPassword.getText())){
+        if (!userData.searchUsersData(usernameField.getText()).getUsername().isEmpty() && userData.searchUsersData(usernameField.getText()).getUsername().equals(usernameField.getText()) && userData.searchUsersData(usernameField.getText()).getPassword().equals(passwordField.getText())){
             //Checks if user is blank, then checks if username and password match to database
             Controller.loadScreen("MainScreenEmpty.fxml", event);
-            ControllerMainEmpty.user = userData.searchUsersData(tfUsername.getText());
+            ControllerMainEmpty.user = userData.searchUsersData(usernameField.getText());
 
         }else{
-            tfUsername.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
-            pfPassword.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+            usernameField.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+            passwordField.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
         }
 
     }

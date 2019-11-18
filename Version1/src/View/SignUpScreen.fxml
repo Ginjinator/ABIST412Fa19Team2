@@ -10,11 +10,11 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="326.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerSignUp">
     <children>
-        <PasswordField fx:id="pfSUPassword" layoutX="62.0" layoutY="397.0" prefHeight="25.0" prefWidth="219.0" />
-        <TextField fx:id="tfPSUEmail" layoutX="62.0" layoutY="275.0" prefHeight="25.0" prefWidth="219.0" />
-        <TextField fx:id="tfLastName" layoutX="62.0" layoutY="210.0" prefHeight="25.0" prefWidth="219.0" />
-        <TextField fx:id="tfFirstName" layoutX="62.0" layoutY="143.0" prefHeight="25.0" prefWidth="219.0" />
-        <PasswordField fx:id="pfSUPasswordConfirmation" layoutX="62.0" layoutY="459.0" prefHeight="25.0" prefWidth="219.0" />
+        <PasswordField fx:id="passwordField" layoutX="62.0" layoutY="397.0" prefHeight="25.0" prefWidth="219.0" />
+        <TextField fx:id="emailField" layoutX="62.0" layoutY="275.0" prefHeight="25.0" prefWidth="219.0" />
+        <TextField fx:id="lastNameField" layoutX="62.0" layoutY="210.0" prefHeight="25.0" prefWidth="219.0" />
+        <TextField fx:id="firstNameField" layoutX="62.0" layoutY="143.0" prefHeight="25.0" prefWidth="219.0" />
+        <PasswordField fx:id="passwordConfirmationField" layoutX="62.0" layoutY="459.0" prefHeight="25.0" prefWidth="219.0" />
         <Button fx:id="submitButton" layoutX="122.0" layoutY="533.0" mnemonicParsing="false" onAction="#submitSignUp" prefHeight="32.0" prefWidth="85.0" text="Register" />
         <Label layoutX="62.0" layoutY="125.0" text="First Name:" />
         <Label layoutX="62.0" layoutY="192.0" text="Last Name:" />
@@ -26,7 +26,7 @@
                 <Font size="18.0" />
             </font>
         </Text>
-      <TextField fx:id="tfPSUEmail" layoutX="62.0" layoutY="338.0" prefHeight="25.0" prefWidth="219.0" />
+      <TextField fx:id="emailField" layoutX="62.0" layoutY="338.0" prefHeight="25.0" prefWidth="219.0" />
       <Label layoutX="62.0" layoutY="321.0" text="Username:" />
     </children>
 </Pane>
