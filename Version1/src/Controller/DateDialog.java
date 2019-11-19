@@ -12,7 +12,7 @@ import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
 
 //use .setVisible(boolean) command to show Date Dialog object
-//.setPreferredSize(new Dimension(570,417)); change dimension of dialog
+//.setPreferredSize(new Dimension(570,417)); and setSize(new Dimension(570, 417)); change dimension of dialog
 
 /*
 This code shows the use of a JDateChooser. This can be
@@ -29,8 +29,8 @@ public class DateDialog extends JDialog {
     public DateDialog(String LabelText){
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         setResizable(false);
-        setSize(new Dimension(306, 148));
-        setPreferredSize(new Dimension(306, 119));
+        setSize(new Dimension(320, 152));
+        setPreferredSize(new Dimension(320, 119));
         setTitle(LabelText);
         JLabel lblNewLabel = new JLabel(LabelText);
         lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 24));

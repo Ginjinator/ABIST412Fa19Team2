@@ -13,6 +13,8 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        DateDialog s = new DateDialog("test");
+        s.setVisible(true);
         launch(args);
     }
 
