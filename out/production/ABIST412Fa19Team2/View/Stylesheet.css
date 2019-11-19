@@ -1,0 +1,20 @@
+.scroll-pane > viewPort {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+BorderPane {
+    -fx-background-color: grey;
+}
+
+Button {
+    -fx-background-radius: 0px;
+}
+
+#navBar {
+    -fx-background-color: #F4F4F4;
+    -fx-background-radius: 0px;
+}

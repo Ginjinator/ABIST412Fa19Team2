@@ -15,7 +15,7 @@
         <TextField fx:id="usernameField" layoutX="188.0" layoutY="131.0" prefHeight="25.0" prefWidth="229.0" />
         <Text layoutX="65.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email/Username" />
         <Text layoutX="83.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-        <Text layoutX="147.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Team 2 Scheduler!">
+        <Text layoutX="147.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Team2 Scheduler!">
             <font>
                 <Font size="18.0" />
             </font>
