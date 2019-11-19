@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane fx:id="borderPane" prefHeight="600.0" stylesheets="@Stylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerMainEmpty">
+    <bottom>
+        <HBox alignment="BOTTOM_CENTER" stylesheets="@Stylesheet.css" BorderPane.alignment="CENTER">
+            <children>
+                <Button id="navBar" fx:id="homeButton" graphicTextGap="0.0" mnemonicParsing="false" onAction="#loadScreenHome" prefHeight="50.0" prefWidth="83.6" stylesheets="@Stylesheet.css">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@round_home_black_48dp.png" />
+                            </image>
+                        </ImageView>
+                    </graphic></Button>
+                <Button id="navBar" fx:id="subButton" graphicTextGap="0.0" mnemonicParsing="false" onAction="#loadScreenSS" prefHeight="50.0" prefWidth="83.6" stylesheets="@Stylesheet.css">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@round_favorite_black_48dp.png" />
+                            </image>
+                        </ImageView>
+                    </graphic></Button>
+                <Button id="navBar" fx:id="detailedButton" graphicTextGap="0.0" mnemonicParsing="false" onAction="#loadScreenSGD" prefHeight="50.0" prefWidth="83.6" stylesheets="@Stylesheet.css">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@round_pageview_black_48dp.png" />
+                            </image>
+                        </ImageView>
+                    </graphic></Button>
+                <Button id="navBar" fx:id="formButton" graphicTextGap="0.0" mnemonicParsing="false" onAction="#loadScreenSGF" prefHeight="50.0" prefWidth="83.6" stylesheets="@Stylesheet.css">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@round_add_circle_black_48dp.png" />
+                            </image>
+                        </ImageView>
+                    </graphic></Button>
+            </children>
+        </HBox>
+    </bottom>
+    <top>
+        <Pane prefHeight="50.0" stylesheets="@Stylesheet.css" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="currentScreen" layoutX="36.0" layoutY="8.0" prefHeight="35.0" prefWidth="264.0" style="-fx-alignment: Center;" text="Current Screen">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font></Label>
+            </children>
+        </Pane>
+    </top>
+    <center>
+        <ScrollPane fx:id="scrollPane" stylesheets="@Stylesheet.css" BorderPane.alignment="CENTER">
+            <content>
+                <VBox fx:id="vBox" style="-fx-background-color: blue;" />
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>
