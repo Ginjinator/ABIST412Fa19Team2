@@ -11,6 +11,7 @@ import com.toedter.calendar.JDateChooser;
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
 
+//use .setVisible() command to show Date Dialog object
 public class DateDialog extends JDialog {
     private JDateChooser cal;
     public DateDialog(String LabelText){
