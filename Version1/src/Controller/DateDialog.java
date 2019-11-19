@@ -13,6 +13,16 @@ import javax.swing.GroupLayout.Alignment;
 
 //use .setVisible(boolean) command to show Date Dialog object
 //.setPreferredSize(new Dimension(570,417)); change dimension of dialog
+
+/*
+This code shows the use of a JDateChooser. This can be
+implemented without the use of a DateDialog
+		JDateChooser birthdate = new JDateChooser();
+		birthdate.setBounds(10, 219, 154, 20);
+
+		This gets the date from the JDateChooser
+		((JTextField)birthdate.getDateEditor().getUiComponent()).getText() --- same as getDate() method below, returns a string
+ */
 public class DateDialog extends JDialog {
     private JDateChooser cal;
     public DateDialog(String LabelText){
