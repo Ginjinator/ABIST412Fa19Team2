@@ -23,6 +23,7 @@ implemented without the use of a DateDialog
 		This gets the date from the JDateChooser
 		((JTextField)birthdate.getDateEditor().getUiComponent()).getText() --- same as getDate() method below, returns a string
  */
+
 public class DateDialog extends JDialog {
     private JDateChooser cal;
     public DateDialog(String LabelText){
