@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.layout.VBox?>
-<ScrollPane fx:id="scrollPane" prefHeight="500.0" prefWidth="336.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerMainScreen">
-    <content>
-        <VBox fx:id="vBox" spacing="10.0" />
-    </content>
-</ScrollPane>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="71.0" layoutY="159.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="122.0" text="Make Appointment" />
+      <Button layoutX="239.0" layoutY="159.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" text="Change Appointment" />
+      <Button layoutX="423.0" layoutY="159.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="122.0" text="Check Status" />
+      <Button layoutX="154.0" layoutY="258.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="122.0" text="Edit Profile" />
+      <Button layoutX="355.0" layoutY="258.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="122.0" text="Change Password" />
+   </children>
+</Pane>
