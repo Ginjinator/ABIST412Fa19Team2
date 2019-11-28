@@ -1,17 +1,13 @@
 package Controller;
 
-/*
-import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Calendar;
-import com.toedter.calendar.JCalendar;
+
 import com.toedter.calendar.JDateChooser;
+
 import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 //use .setVisible(boolean) command to show Date Dialog object
 //.setPreferredSize(new Dimension(570,417)); and setSize(new Dimension(570, 417)); change dimension of dialog
@@ -24,7 +20,7 @@ implemented without the use of a DateDialog
 
 		This gets the date from the JDateChooser
 		((JTextField)birthdate.getDateEditor().getUiComponent()).getText() --- same as getDate() method below, returns a string
-
+*/
 
 public class DateDialog extends JDialog {
     private JDateChooser cal;
@@ -85,4 +81,3 @@ public class DateDialog extends JDialog {
         return ((JTextField)cal.getDateEditor().getUiComponent()).getText();
     }
 }
-*/

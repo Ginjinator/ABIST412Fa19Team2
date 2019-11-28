@@ -1,7 +1,6 @@
 package Model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class User implements Serializable{
 
@@ -17,7 +16,7 @@ public class User implements Serializable{
         this.username = username;
         this.password = password;
         //this.userGroups = userGroups;
-    };
+    }
      */
 
     public User(String firstName, String lastName, String username, String password){
@@ -26,7 +25,7 @@ public class User implements Serializable{
         this.username = username;
         this.password = password;
         //this.userGroups = new ArrayList<>();
-    };
+    }
 
     public User(){
         this.firstName = "";
@@ -34,7 +33,7 @@ public class User implements Serializable{
         this.username = "";
         this.password = "";
         //this.userGroups = new ArrayList<>();
-    };
+    }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
