@@ -86,6 +86,7 @@ public class ProfessionalUser implements Serializable {
     public Schedule getSchedule(){
         return schedule;
     }
+
     public void setSchedule(Schedule schedule){
         this.schedule = schedule;
     }
@@ -93,4 +94,6 @@ public class ProfessionalUser implements Serializable {
     public String getFullName(){
         return getFirstName() + " " + getLastName();
     }
+
+    public Boolean isProfessional(){ return true; }
 }

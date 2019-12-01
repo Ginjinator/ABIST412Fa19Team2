@@ -8,22 +8,25 @@ public class User implements Serializable{
     private String lastName;
     private String username;
     private String password;
+    private String phoneNumber;
     //private ArrayList<StudyGroup> userGroups;
 
-    /*public User(String firstName, String lastName, String username, String password, ArrayList<StudyGroup> userGroups){
+    /*public User(String firstName, String lastName, String username, String password, String phoneNumber, ArrayList<StudyGroup> userGroups){
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.password = password;
+        this.phoneNumber = phoneNumber;
         //this.userGroups = userGroups;
     }
      */
 
-    public User(String firstName, String lastName, String username, String password){
+    public User(String firstName, String lastName, String username, String password, String phoneNumber){
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.password = password;
+        this.phoneNumber = phoneNumber;
         //this.userGroups = new ArrayList<>();
     }
 
@@ -32,6 +35,7 @@ public class User implements Serializable{
         this.lastName = "";
         this.username = "";
         this.password = "";
+        this.phoneNumber = "";
         //this.userGroups = new ArrayList<>();
     }
 
@@ -51,6 +55,8 @@ public class User implements Serializable{
         this.password = password;
     }
 
+    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
+
     //public void setUserGroups(ArrayList<StudyGroup> userGroups) {
         //this.userGroups = userGroups;
     //}
@@ -60,6 +66,7 @@ public class User implements Serializable{
         this.lastName = user.getLastName();
         this.username = user.getUsername();
         this.password = user.getPassword();
+        this.username = user.getPhoneNumber();
         //this.userGroups = user.getUserGroups();
     }
 
@@ -81,15 +88,18 @@ public class User implements Serializable{
         return password;
     }
 
+    public String getPhoneNumber(){ return phoneNumber; }
+
     /*public ArrayList<StudyGroup> getUserGroups() {
         return userGroups;
     }
     */
 
-
     public String getFullName(){
         return getFirstName() + " " + getLastName();
     }
+
+    public Boolean isProfessional(){ return false; }
 
     /*
     public ArrayList<StudyGroup> addtoGroup(StudyGroup studyGroup){
