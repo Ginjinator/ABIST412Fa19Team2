@@ -12,12 +12,18 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 
 public class ControllerMainScreen implements Initializable{
 
 
     @FXML private VBox vBox;
     @FXML private ScrollPane scrollPane;
+
+    @FXML
+    private void setChangePasswordScreen(ActionEvent event) throws IOException {
+        Controller.loadScreen("ChangePasswordScreen.fxml", event);
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

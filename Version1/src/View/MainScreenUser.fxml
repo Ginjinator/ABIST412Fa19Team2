@@ -5,12 +5,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerMainScreen">
    <children>
       <Button layoutX="235.0" layoutY="159.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" text="Change Appointment" />
       <Button layoutX="403.0" layoutY="159.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" text="Check Status" />
       <Button layoutX="132.0" layoutY="258.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" text="Edit Profile" />
-      <Button layoutX="338.0" layoutY="258.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" text="Change Password" />
+      <Button layoutX="338.0" layoutY="258.0" mnemonicParsing="false" onAction="#setChangePasswordScreen" prefHeight="43.0" prefWidth="130.0" text="Change Password" />
       <Text layoutX="260.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome ">
          <font>
             <Font size="18.0" />
