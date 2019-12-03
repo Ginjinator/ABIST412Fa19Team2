@@ -42,7 +42,7 @@ public class ControllerMainEmpty implements Initializable{
 
     @FXML//Home Screen
     private void loadScreenHome() throws IOException {
-        borderPane.setCenter(FXMLLoader.load(View.class.getResource("MainScreen.fxml")));
+        borderPane.setCenter(FXMLLoader.load(View.class.getResource("MainScreenUser.fxml")));
         currentScreen.setText("Main Screen");
     }
 
@@ -56,7 +56,7 @@ public class ControllerMainEmpty implements Initializable{
 
     @FXML//Home Screen
     private void loadScreenHome(ActionEvent event) throws IOException {
-        borderPane.setCenter(FXMLLoader.load(View.class.getResource("MainScreen.fxml")));
+        borderPane.setCenter(FXMLLoader.load(View.class.getResource("MainScreenUser.fxml")));
         currentScreen.setText("Main Screen");
     }
 

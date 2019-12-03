@@ -33,7 +33,7 @@ public class UserData {
 
     private void createTestUsersData() {
         for(int i = 0; i <20; i++){
-            getUsersData().add(new User("firstName" + i, "lastName" + i, "username" + i, "password" + i));
+            getUsersData().add(new User("firstName" + i, "lastName" + i, "username" + i, "password" + i, "phoneNumber" + i));
         }
     }
 

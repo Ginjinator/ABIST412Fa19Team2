@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 public class ControllerSignUp implements Initializable{
     @FXML private TextField firstNameField;
     @FXML private TextField lastNameField;
-    @FXML private TextField emailField;
+    @FXML private TextField usernameField;
     @FXML private TextField phoneNumField;
     @FXML private PasswordField passwordField;
     @FXML private PasswordField passwordConfirmationField;
@@ -32,10 +32,10 @@ public class ControllerSignUp implements Initializable{
     @FXML
     private void submitSignUp(ActionEvent event) throws IOException {
         //Special Character Verification & Screen Swap
-        if(!Controller.hasSpecialChars(firstNameField.getText()) && !Controller.hasSpecialChars(lastNameField.getText()) && !Controller.hasSpecialChars(emailField.getText()) && !Controller.hasSpecialChars(passwordField.getText())){
+        if(!Controller.hasSpecialChars(firstNameField.getText()) && !Controller.hasSpecialChars(lastNameField.getText()) && !Controller.hasSpecialChars(usernameField.getText()) && !Controller.hasSpecialChars(passwordField.getText()) && !Controller.hasSpecialChars(phoneNumField.getText())){
 
             //User creation and added to Database
-            User user = new User(firstNameField.getText(), lastNameField.getText(), emailField.getText(), passwordField.getText());
+            User user = new User(firstNameField.getText(), lastNameField.getText(), usernameField.getText(), passwordField.getText(), phoneNumField.getText());
             Model.UserData userData = new Model.UserData();
             userData.addUser(user);
 
@@ -48,8 +48,8 @@ public class ControllerSignUp implements Initializable{
             if(Controller.hasSpecialChars(lastNameField.getText())){
                 lastNameField.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
             }
-            if(Controller.hasSpecialChars(emailField.getText())){
-                emailField.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+            if(Controller.hasSpecialChars(usernameField.getText())){
+                usernameField.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
             }
             if(Controller.hasSpecialChars(passwordField.getText())){
                 passwordField.setBackground(new Background(new BackgroundFill( Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
