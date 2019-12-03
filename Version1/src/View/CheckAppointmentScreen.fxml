@@ -19,8 +19,8 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <TextArea layoutX="67.0" layoutY="134.0" prefHeight="200.0" prefWidth="200.0" />
-      <TextArea layoutX="330.0" layoutY="134.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button layoutX="274.0" layoutY="355.0" mnemonicParsing="false" text="Back" />
+      <TextArea fx:id="appointmentArea" layoutX="67.0" layoutY="134.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextArea fx:id="statusArea" layoutX="330.0" layoutY="134.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="back" layoutX="274.0" layoutY="355.0" mnemonicParsing="false" text="Back" />
    </children>
 </AnchorPane>
