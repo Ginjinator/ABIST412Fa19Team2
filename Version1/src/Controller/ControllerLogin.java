@@ -38,7 +38,7 @@ public class ControllerLogin implements Initializable{
 
         if (!userData.searchUsersData(usernameField.getText()).getUsername().isEmpty() && userData.searchUsersData(usernameField.getText()).getUsername().equals(usernameField.getText()) && userData.searchUsersData(usernameField.getText()).getPassword().equals(passwordField.getText())){
             //Checks if user is blank, then checks if username and password match to database
-            Controller.loadScreen("MainScreenEmpty.fxml", event);
+            Controller.loadScreen("MainScreen.fxml", event);
             ControllerMainEmpty.user = userData.searchUsersData(usernameField.getText());
 
         }else{

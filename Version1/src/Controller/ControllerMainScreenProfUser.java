@@ -1,8 +1,10 @@
 package Controller;
 
+import Model.ProfessionalUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 
@@ -15,6 +17,13 @@ public class ControllerMainScreenProfUser implements Initializable{
 
     @FXML private VBox vBox;
     @FXML private ScrollPane scrollPane;
+    @FXML private Button seeRequests;
+    @FXML private Button cancelAppointments;
+    @FXML private Button editProfile;
+    @FXML private Button changePassword;
+    @FXML private Button changeAvailability;
+
+    public static ProfessionalUser professionalUser = new ProfessionalUser();
 
     @FXML
     private void setChangePasswordScreen(ActionEvent event) throws IOException {

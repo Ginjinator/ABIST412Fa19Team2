@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -21,6 +22,8 @@ public class ControllerMainScreenUser implements Initializable{
     @FXML private Button changeAppointment;
     @FXML private Button checkStatus;
     @FXML private Button editProfile;
+
+    public static User user = new User();
 
     @FXML
     private void setChangePasswordScreen(ActionEvent event) throws IOException {
