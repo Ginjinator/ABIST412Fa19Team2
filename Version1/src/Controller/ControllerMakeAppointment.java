@@ -12,7 +12,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -74,6 +76,9 @@ public class ControllerMakeAppointment {
 
 	@FXML
 	private void setAppointmentButton(ActionEvent event) throws IOException {
-
+		String time = this.choice.getSelectionModel().getSelectedItem().toString();
+		LocalDate date = datePicker.getValue();
+		String doctor = this.doctor.getSelectionModel().getSelectedItem().toString();
+		Controller.loadScreen("MainScreenUser.fxml", event);
 	}
 }
