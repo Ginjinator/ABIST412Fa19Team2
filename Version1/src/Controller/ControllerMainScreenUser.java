@@ -12,31 +12,38 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerMainScreenUser implements Initializable{
+public class ControllerMainScreenUser implements Initializable {
 
 
-    @FXML private VBox vBox;
-    @FXML private ScrollPane scrollPane;
-    @FXML private Button changePassword;
-    @FXML private Button makeAppointment;
-    @FXML private Button changeAppointment;
-    @FXML private Button checkStatus;
-    @FXML private Button editProfile;
+	@FXML
+	private VBox vBox;
+	@FXML
+	private ScrollPane scrollPane;
+	@FXML
+	private Button changePassword;
+	@FXML
+	private Button makeAppointment;
+	@FXML
+	private Button changeAppointment;
+	@FXML
+	private Button checkStatus;
+	@FXML
+	private Button editProfile;
 
-    public static User user = new User();
+	public static User user = new User();
 
-    @FXML
-    private void setChangePasswordScreen(ActionEvent event) throws IOException {
-        Controller.loadScreen("ChangePasswordScreen.fxml", event);
-    }
+	@FXML
+	private void setChangePasswordScreen(ActionEvent event) throws IOException {
+		Controller.loadScreen("ChangePasswordScreen.fxml", event);
+	}
 
 	@FXML
 	private void setMakeAppointmentScreen(ActionEvent event) throws IOException {
 		Controller.loadScreen("MainOpenAppointments.fxml", event);
 	}
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
         /*
         try {
 //            vBox.getChildren().clear();
@@ -48,6 +55,6 @@ public class ControllerMainScreenUser implements Initializable{
             Logger.getLogger(ControllerMainScreenUser.class.getName()).log(Level.SEVERE, null, ex);
         }
         */
-    }
+	}
 
 }

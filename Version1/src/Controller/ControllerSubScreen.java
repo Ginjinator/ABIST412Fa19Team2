@@ -13,15 +13,17 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ControllerSubScreen implements Initializable{
+public class ControllerSubScreen implements Initializable {
 
 
-    @FXML private VBox vBox;
-    @FXML private ScrollPane scrollPane;
+	@FXML
+	private VBox vBox;
+	@FXML
+	private ScrollPane scrollPane;
 
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
         /*
         try {
             vBox.getChildren().clear();
@@ -33,6 +35,6 @@ public class ControllerSubScreen implements Initializable{
             Logger.getLogger(ControllerSubScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
         */
-    }
+	}
 
 }
