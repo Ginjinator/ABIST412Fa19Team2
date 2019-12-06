@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.DialogPane?>
@@ -12,10 +13,11 @@
       <DialogPane prefHeight="400.0" prefWidth="600.0" />
       <ChoiceBox fx:id="doctor" layoutX="170.0" layoutY="62.0" prefHeight="26.0" prefWidth="260.0"/>
       <DatePicker fx:id="datePicker" layoutX="170.0" layoutY="123.0" onAction="#setDate" prefHeight="26.0"
-                  prefWidth="260.0" showWeekNumbers="true"/>
+                  prefWidth="260.0" promptText="Select A Day" showWeekNumbers="true"/>
       <Label layoutX="108.0" layoutY="66.0" text="Doctor:" />
       <Label layoutX="116.0" layoutY="127.0" text="Day:"/>
       <Label layoutX="116.0" layoutY="217.0" text="Time:" />
       <ChoiceBox fx:id="choice" layoutX="170.0" layoutY="212.0" prefHeight="26.0" prefWidth="260.0"/>
+      <Button layoutX="240.0" layoutY="313.0" mnemonicParsing="false" text="Make Appointment"/>
    </children>
 </AnchorPane>
