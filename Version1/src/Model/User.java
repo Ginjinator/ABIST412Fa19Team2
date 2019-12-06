@@ -9,6 +9,7 @@ public class User implements Serializable{
     private String username;
     private String password;
     private String phoneNumber;
+
     //private ArrayList<StudyGroup> userGroups;
 
     /*public User(String firstName, String lastName, String username, String password, String phoneNumber, ArrayList<StudyGroup> userGroups){
@@ -36,6 +37,7 @@ public class User implements Serializable{
         this.username = "";
         this.password = "";
         this.phoneNumber = "";
+
         //this.userGroups = new ArrayList<>();
     }
 

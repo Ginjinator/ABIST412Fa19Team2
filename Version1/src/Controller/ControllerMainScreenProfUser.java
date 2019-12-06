@@ -1,8 +1,10 @@
 package Controller;
 
+import Model.ProfessionalUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 
@@ -10,19 +12,33 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerMainScreenProfUser implements Initializable{
+public class ControllerMainScreenProfUser implements Initializable {
 
 
-    @FXML private VBox vBox;
-    @FXML private ScrollPane scrollPane;
+	@FXML
+	private VBox vBox;
+	@FXML
+	private ScrollPane scrollPane;
+	@FXML
+	private Button seeRequests;
+	@FXML
+	private Button cancelAppointments;
+	@FXML
+	private Button editProfile;
+	@FXML
+	private Button changePassword;
+	@FXML
+	private Button changeAvailability;
 
-    @FXML
-    private void setChangePasswordScreen(ActionEvent event) throws IOException {
-        Controller.loadScreen("ChangePasswordScreen.fxml", event);
-    }
+	public static ProfessionalUser professionalUser = new ProfessionalUser();
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+	@FXML
+	private void setChangePasswordScreen(ActionEvent event) throws IOException {
+		Controller.loadScreen("ChangePasswordScreen.fxml", event);
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
         /*
         try {
 //            vBox.getChildren().clear();
@@ -34,6 +50,6 @@ public class ControllerMainScreenProfUser implements Initializable{
             Logger.getLogger(ControllerMainScreenUser.class.getName()).log(Level.SEVERE, null, ex);
         }
         */
-    }
+	}
 
 }

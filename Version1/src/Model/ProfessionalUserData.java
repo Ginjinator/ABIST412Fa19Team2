@@ -98,4 +98,14 @@ public class ProfessionalUserData {
         getProfessionalUserData().add(professionalUser);
         write();
     }
+
+    public static ArrayList<String> getProfessionalUserDataNames() {
+        ArrayList<String> names = new ArrayList<>();
+        for (ProfessionalUser i : getProfessionalUserData()) {
+            names.add(i.getFirstName() + " " + i.getLastName());
+        }
+        return names;
+    }
+
+
 }

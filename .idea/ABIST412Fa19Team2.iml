@@ -15,5 +15,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="LGoodDatePicker-10.4.1" level="project" />
   </component>
 </module>
