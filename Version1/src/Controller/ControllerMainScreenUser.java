@@ -30,6 +30,11 @@ public class ControllerMainScreenUser implements Initializable{
         Controller.loadScreen("ChangePasswordScreen.fxml", event);
     }
 
+	@FXML
+	private void setMakeAppointmentScreen(ActionEvent event) throws IOException {
+		Controller.loadScreen("MainOpenAppointments.fxml", event);
+	}
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         /*
