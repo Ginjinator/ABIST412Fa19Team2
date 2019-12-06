@@ -72,6 +72,7 @@ public class ControllerMakeAppointment {
 
 	}
 
+	@FXML
 	private void setAppointmentButton(ActionEvent event) throws IOException {
 
 	}
