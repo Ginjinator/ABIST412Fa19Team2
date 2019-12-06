@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.ProfessionalUserData;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,6 +21,8 @@ import java.util.ResourceBundle;
 
 public class ControllerMakeAppointment {
 
+	@FXML
+	private ChoiceBox doctor;
     @FXML private DatePicker datePicker;
     @FXML private ChoiceBox choice;
 
@@ -30,8 +33,7 @@ public class ControllerMakeAppointment {
 
 
     public void initialize() {
-
-
+		//times
         List<String> list = new ArrayList<String>();
         list.add("08:00");
         list.add("08:30");
@@ -61,7 +63,11 @@ public class ControllerMakeAppointment {
         ObservableList obList = FXCollections.observableList(list);
         this.choice.setItems(obList);
         this.choice.getSelectionModel().selectFirst();
-
+		//doctors
+		List<String> doctors = ProfessionalUserData.getProfessionalUserDataNames();
+		obList = FXCollections.observableList(doctors);
+		this.doctor.setItems(obList);
+		this.doctor.getSelectionModel().selectFirst();
 
     }
 }
