@@ -6,11 +6,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.event.ActionEvent;
-import javafx.scene.control.SelectionMode;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -27,6 +24,8 @@ public class ControllerMakeAppointment {
 	private DatePicker datePicker;
 	@FXML
 	private ChoiceBox choice;
+	@FXML
+	Button button;
 
 	@FXML
 	private void setDate(ActionEvent event) throws IOException {
@@ -70,6 +69,10 @@ public class ControllerMakeAppointment {
 		obList = FXCollections.observableList(doctors);
 		this.doctor.setItems(obList);
 		this.doctor.getSelectionModel().selectFirst();
+
+	}
+
+	private void setAppointmentButton(ActionEvent event) throws IOException {
 
 	}
 }

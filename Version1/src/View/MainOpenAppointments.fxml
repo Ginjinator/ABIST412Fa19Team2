@@ -18,6 +18,7 @@
       <Label layoutX="116.0" layoutY="127.0" text="Day:"/>
       <Label layoutX="116.0" layoutY="217.0" text="Time:" />
       <ChoiceBox fx:id="choice" layoutX="170.0" layoutY="212.0" prefHeight="26.0" prefWidth="260.0"/>
-      <Button layoutX="240.0" layoutY="313.0" mnemonicParsing="false" text="Make Appointment"/>
+      <Button fx:id="button" layoutX="240.0" layoutY="313.0" mnemonicParsing="false" onAction="#setAppointmentButton"
+              text="Make Appointment"/>
    </children>
 </AnchorPane>
