@@ -1,6 +1,7 @@
 package Model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -12,9 +13,9 @@ public class Schedule implements Serializable {
     private String timeAvailable;
     // Lunch and after hours
     private String timeUnavailable;
-    private Date [] datesOff;
+    private LocalDate[] datesOff;
 
-    public Schedule(String timeAvailable, String timeUnavailable, Date [] datesOff) {
+    public Schedule(String timeAvailable, String timeUnavailable, LocalDate[] datesOff) {
         this.timeAvailable = timeAvailable;
         this.timeUnavailable = timeUnavailable;
         this.datesOff = datesOff;
@@ -42,11 +43,11 @@ public class Schedule implements Serializable {
         this.timeUnavailable = timeUnavailable;
     }
 
-    public Date[] getDatesOff() {
+    public LocalDate[] getDatesOff() {
         return datesOff;
     }
 
-    public void setDatesOff(Date[] datesOff) {
+    public void setDatesOff(LocalDate[] datesOff) {
         this.datesOff = datesOff;
     }
 

@@ -9,7 +9,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="326.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerSignUp">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+      prefWidth="326.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Controller.ControllerSignUp">
     <children>
         <PasswordField fx:id="passwordField" layoutX="62.0" layoutY="397.0" prefHeight="25.0" prefWidth="219.0" />
         <TextField fx:id="usernameField" layoutX="62.0" layoutY="275.0" prefHeight="25.0" prefWidth="219.0" />
@@ -29,7 +31,7 @@
         </Text>
       <TextField fx:id="phoneNumField" layoutX="62.0" layoutY="338.0" prefHeight="25.0" prefWidth="219.0" />
       <Label layoutX="62.0" layoutY="321.0" text="Phone Number:" />
-      <ChoiceBox fx:id="professionalUser" layoutX="63.0" layoutY="87.0" prefHeight="25.0" prefWidth="219.0" />
-      <Label layoutX="62.0" layoutY="64.0" text="Doctor or User:" />
+        <ChoiceBox fx:id="professionalUser" layoutX="63.0" layoutY="87.0" prefHeight="25.0" prefWidth="219.0"/>
+        <Label layoutX="62.0" layoutY="64.0" text="Doctor or User:"/>
     </children>
 </Pane>
