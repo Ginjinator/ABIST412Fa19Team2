@@ -86,11 +86,12 @@ public class ControllerMakeAppointment {
 		ArrayList<Appointment> appointmentsForDoctor = profUser.getProfessionalUser(doctor).getAppointments();
 		ArrayList<Schedule> unAvailableSchedule = profUser.getProfessionalUser(doctor).getScheduleData().getUnavailableSchedule();
 		ArrayList<Schedule> unavailableDays = profUser.getProfessionalUser(doctor).getScheduleData().getOffDays();
+
 		for (Appointment i : appointmentsForDoctor) {
 			if (((i.getDate().compareTo(date)) == 0) && (i.getTime().equals(time) && i.getUser().getUsername().equals(ControllerMainEmpty.user.getUsername())))
 				matchFound = true;
 
-			if (!matchFound) { //checks if match hasn't been found, since there is no point in executing the code since it will show an error anyway
+			if (!matchFound) { //checks if match hasn't been found, since there is no point in executing the code since it will show an error anyway if match found
 
 				for (Schedule u : unAvailableSchedule) {
 					if ((i.getDate().compareTo(u.getUnavailableDate()) == 0) && (i.getTime().equals(u.getTimeUnavailable())))
@@ -115,7 +116,7 @@ public class ControllerMakeAppointment {
 
 		if (matchFound) {
 			Alert a = new Alert(Alert.AlertType.NONE);
-			a.setContentText("You have selected an existing appointment or an unavailable day. Please try again.");
+			a.setContentText("You have selected an existing appointment or an unavailable day or time. Please try again.");
 			a.setAlertType(Alert.AlertType.ERROR);
 			a.show();
 

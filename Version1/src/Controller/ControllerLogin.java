@@ -1,5 +1,7 @@
 package Controller;
 
+import Model.ProfessionalUserData;
+import Model.User;
 import Model.UserData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -38,6 +40,7 @@ public class ControllerLogin implements Initializable {
 	@FXML
 	private void authenticate(ActionEvent event) throws IOException {
 		Model.UserData userData = new UserData();
+		Model.ProfessionalUserData professionalUserData = new ProfessionalUserData();
 //        Model.StudyGroupData studyGroupData = new StudyGroupData();
 
 		if (!userData.searchUsersData(usernameField.getText()).getUsername().isEmpty() && userData.searchUsersData(usernameField.getText()).getUsername().equals(usernameField.getText()) && userData.searchUsersData(usernameField.getText()).getPassword().equals(passwordField.getText())) {
@@ -45,6 +48,10 @@ public class ControllerLogin implements Initializable {
 			Controller.loadScreen("MainScreenUser.fxml", event);
 			ControllerMainEmpty.user = userData.searchUsersData(usernameField.getText());
 
+		} else if (!professionalUserData.searchUsersData(usernameField.getText()).getUsername().isEmpty() && professionalUserData.searchUsersData(usernameField.getText()).getUsername().equals(usernameField.getText()) && professionalUserData.searchUsersData(usernameField.getText()).getPassword().equals(passwordField.getText())) {
+			Controller.loadScreen("MainScreenProfUser.fxml", event);
+			ControllerMainEmpty.profUser = professionalUserData.searchUsersData(usernameField.getText());
+			ControllerMainEmpty.user = new User();
 		} else {
 			usernameField.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
 			passwordField.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));

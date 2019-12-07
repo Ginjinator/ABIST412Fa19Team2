@@ -29,8 +29,17 @@ public class ControllerMainScreenUser implements Initializable {
 	private Button checkStatus;
 	@FXML
 	private Button editProfile;
+	@FXML
+	private Button signOutButton;
 
 	public static User user = new User();
+
+	@FXML
+	private void setToSignedOut(ActionEvent event) throws IOException {
+		ControllerMainEmpty.user = new User();
+		Controller.loadScreen("ControllerLogin.fxml", event);
+
+	}
 
 	@FXML
 	private void setChangePasswordScreen(ActionEvent event) throws IOException {

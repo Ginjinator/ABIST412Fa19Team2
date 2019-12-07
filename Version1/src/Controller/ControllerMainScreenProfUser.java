@@ -29,6 +29,8 @@ public class ControllerMainScreenProfUser implements Initializable {
 	private Button changePassword;
 	@FXML
 	private Button changeAvailability;
+	@FXML
+	private Button signOutButton;
 
 	public static ProfessionalUser professionalUser = new ProfessionalUser();
 

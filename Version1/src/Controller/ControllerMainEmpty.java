@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.ProfessionalUser;
 import Model.User;
 import View.View;
 import javafx.event.ActionEvent;
@@ -34,6 +35,7 @@ public class ControllerMainEmpty implements Initializable {
 	private static BorderPane borderPane2;
 
 	public static User user = new User();
+	public static ProfessionalUser profUser = new ProfessionalUser();
 	public static Boolean isStudyDetailNext = false;
 
 	@FXML//SGC = StudyGroupCard
