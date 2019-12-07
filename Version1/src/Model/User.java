@@ -103,29 +103,6 @@ public class User implements Serializable{
 
     public Boolean isProfessional(){ return false; }
 
-    /*
-    public ArrayList<StudyGroup> addtoGroup(StudyGroup studyGroup){
-        userGroups.add(studyGroup);
-        return userGroups;
-    }
-
-    public ArrayList<StudyGroup> removeFromGroup(StudyGroup studyGroup){
-        int index = searchStudyGroup(studyGroup);
-        if((userGroups.size() > 0) && (index >= 0)){
-            userGroups.remove(index);
-        }
-        return userGroups;
-    }
-
-    public int searchStudyGroup(StudyGroup studyGroup){
-        for(int i = 0;i < userGroups.size();i++){
-            if(userGroups.get(i).equals(studyGroup)){
-                return i;
-            }
-        }
-        return -1;
-    }
-    */
 
 
 

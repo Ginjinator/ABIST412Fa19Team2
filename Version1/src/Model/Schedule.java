@@ -2,23 +2,26 @@ package Model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.ArrayList;
+
 
 /**
  * Used to save a users available time and vacation/time off
  */
+
 public class Schedule implements Serializable {
 
     // Work hours
     private String timeAvailable;
     // Lunch and after hours
     private String timeUnavailable;
-    private LocalDate[] datesOff;
+	private ArrayList<LocalDate> datesOff;
 
-    public Schedule(String timeAvailable, String timeUnavailable, LocalDate[] datesOff) {
+	public Schedule(String timeAvailable, String timeUnavailable, ArrayList<LocalDate> datesOff) {
         this.timeAvailable = timeAvailable;
         this.timeUnavailable = timeUnavailable;
         this.datesOff = datesOff;
+
     }
 
     public Schedule() {
@@ -43,11 +46,11 @@ public class Schedule implements Serializable {
         this.timeUnavailable = timeUnavailable;
     }
 
-    public LocalDate[] getDatesOff() {
+	public ArrayList<LocalDate> getDatesOff() {
         return datesOff;
     }
 
-    public void setDatesOff(LocalDate[] datesOff) {
+	public void setDatesOff(ArrayList<LocalDate> datesOff) {
         this.datesOff = datesOff;
     }
 
