@@ -107,6 +107,7 @@ public class ControllerMakeAppointment {
 			Appointment appointment = new Appointment(time, date, ControllerMainEmpty.user);
 			System.out.println("Appointment made for username " + ControllerMainEmpty.user.getUsername());
 			profUser.getProfessionalUser(doctor).addAppointment(appointment);
+			ControllerMainEmpty.user.addAppointment(appointment);
 			Controller.loadScreen("MainScreenUser.fxml", event);
 		}
 

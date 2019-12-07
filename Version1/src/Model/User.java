@@ -1,6 +1,7 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class User implements Serializable{
 
@@ -9,6 +10,7 @@ public class User implements Serializable{
     private String username;
     private String password;
     private String phoneNumber;
+    private ArrayList<Appointment> appointments = new ArrayList<>();
 
     //private ArrayList<StudyGroup> userGroups;
 
@@ -103,7 +105,18 @@ public class User implements Serializable{
 
     public Boolean isProfessional(){ return false; }
 
+    public void addAppointment(Appointment appointment) {
+        this.appointments.add(appointment);
+    }
 
+    public ArrayList<Appointment> getAppointments() {
+        return this.appointments;
+    }
+
+    public void deleteAppointment(int Index) {
+        this.appointments.remove(Index);
+
+    }
 
 
 }
