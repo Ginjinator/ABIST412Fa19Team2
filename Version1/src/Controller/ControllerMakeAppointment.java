@@ -98,7 +98,7 @@ public class ControllerMakeAppointment {
 
 		if (matchFound) {
 			Alert a = new Alert(Alert.AlertType.NONE);
-			a.setContentText("You have selected an existing appointment. Please try again.");
+			a.setContentText("You have selected an existing appointment or an unavailable day. Please try again.");
 			a.setAlertType(Alert.AlertType.ERROR);
 			a.show();
 

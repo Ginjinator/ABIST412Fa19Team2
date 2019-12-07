@@ -2,7 +2,7 @@ package Model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.ArrayList;
+
 
 
 /**
@@ -12,30 +12,35 @@ import java.util.ArrayList;
 public class Schedule implements Serializable {
 
     // Work hours
-    private String timeAvailable;
+    //   private String timeAvailable;
     // Lunch and after hours
     private String timeUnavailable;
-	private ArrayList<LocalDate> datesOff;
+    //private ArrayList<LocalDate> datesOff;
+    private LocalDate unavailableDate;
 
+
+    /*
 	public Schedule(String timeAvailable, String timeUnavailable, ArrayList<LocalDate> datesOff) {
-        this.timeAvailable = timeAvailable;
-        this.timeUnavailable = timeUnavailable;
-        this.datesOff = datesOff;
+		this.timeAvailable = timeAvailable;
+		this.timeUnavailable = timeUnavailable;
+		this.datesOff = datesOff;
 
-    }
-
+	}
+*/
     public Schedule() {
-        this.timeAvailable = "";
+
         this.timeUnavailable = "";
-        this.datesOff = null;
+        this.unavailableDate = null;
+
     }
 
-    public String getTimeAvailable() {
-        return timeAvailable;
+
+    public void setUnavailableDate(LocalDate date) {
+        unavailableDate = date;
     }
 
-    public void setTimeAvailable(String timeAvailable) {
-        this.timeAvailable = timeAvailable;
+    public LocalDate getUnavailableDate() {
+        return unavailableDate;
     }
 
     public String getTimeUnavailable() {
@@ -46,12 +51,11 @@ public class Schedule implements Serializable {
         this.timeUnavailable = timeUnavailable;
     }
 
-	public ArrayList<LocalDate> getDatesOff() {
-        return datesOff;
-    }
 
+/*
 	public void setDatesOff(ArrayList<LocalDate> datesOff) {
         this.datesOff = datesOff;
     }
+*/
 
 }

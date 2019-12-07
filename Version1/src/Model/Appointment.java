@@ -1,8 +1,9 @@
 package Model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Appointment {
+public class Appointment implements Serializable {
 	private String time = "";
 	private LocalDate date;
 	private User user;

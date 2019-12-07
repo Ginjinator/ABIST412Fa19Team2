@@ -3,7 +3,7 @@ package Model;
 import java.io.*;
 import java.util.ArrayList;
 
-public class ProfessionalUserData {
+public class ProfessionalUserData implements Serializable {
     private static ArrayList<ProfessionalUser> professionalUserData = new ArrayList<>();
     /**
      * @return the professionalUserData
