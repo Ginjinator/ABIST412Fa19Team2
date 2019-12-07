@@ -7,6 +7,7 @@ public class Appointment implements Serializable {
 	private String time = "";
 	private LocalDate date;
 	private User user;
+	private ProfessionalUser profUser;
 
 	public Appointment(String time, LocalDate date, User user) {
 		this.time = time;
@@ -38,5 +39,11 @@ public class Appointment implements Serializable {
 		this.user = user;
 	}
 
+	public ProfessionalUser getProfUser() {
+		return profUser;
+	}
 
+	public void setProfUser(ProfessionalUser profUser) {
+		this.profUser = profUser;
+	}
 }
