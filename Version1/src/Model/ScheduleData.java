@@ -22,6 +22,13 @@ public class ScheduleData implements Serializable {
 
 	}
 
+	/*
+	 An unavailable day includes both a day and SPECIFIC time, such as a lunch time on March 4, 2020 or whatever.
+	 When making for an appointment, it verifies that the person
+	 did not schedule it on an off day AND an unavailable day/time.
+	 So if a dialog for scheduling lunch during a day is created, it would use this function to add a lunch time.
+	 */
+
 	public void addUnavailableDay(LocalDate date, String time) {
 		Schedule unavailable = new Schedule();
 		unavailable.setTimeUnavailable(time);
@@ -30,6 +37,12 @@ public class ScheduleData implements Serializable {
 
 	}
 
+	/*
+	 Off days include just the whole day, meaning they're not available for the WHOLE day, hence
+	 the lacking of a time parameter. When making for an appointment, it verifies that the person
+	 did not schedule it on an off day AND an unavailable day.
+	 So, if a doctor is scheduling vacation and won't be in for the WHOLE day, they would use this function.
+	 */
 	public void addOffDay(LocalDate date) {
 		Schedule unavailable = new Schedule();
 		unavailable.setUnavailableDate(date);
