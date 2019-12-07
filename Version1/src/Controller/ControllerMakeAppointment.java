@@ -8,7 +8,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.event.ActionEvent;
-
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -86,7 +85,7 @@ public class ControllerMakeAppointment {
 		ArrayList<Appointment> appointmentsForDoctor = profUser.getProfessionalUser(doctor).getAppointments();
 
 		for (Appointment i : appointmentsForDoctor) {
-			if ((i.getDate().equals(date)) && (i.getTime().equals(time) && i.getUser().getUsername().equals(ControllerMainEmpty.user.getUsername())))
+			if (((i.getDate().compareTo(date)) == 0) && (i.getTime().equals(time) && i.getUser().getUsername().equals(ControllerMainEmpty.user.getUsername())))
 				matchFound = true;
 		}
 
