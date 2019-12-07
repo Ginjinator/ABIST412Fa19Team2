@@ -37,7 +37,7 @@ public class ControllerMakeAppointment {
 		System.out.println("User: " + ControllerMainEmpty.user);
 		//times
 		List<String> list = new ArrayList<String>();
-		list.add("08:00");
+		list.add("08:00"); // 8:00 AM
 		list.add("08:30");
 		list.add("09:00");
 		list.add("09:30");

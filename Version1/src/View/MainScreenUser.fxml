@@ -9,9 +9,9 @@
       prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="Controller.ControllerMainScreenUser">
    <children>
-      <Button fx:id="changeAppointment" layoutX="235.0" layoutY="159.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" text="Change Appointment" />
-      <Button fx:id="checkStatus" layoutX="403.0" layoutY="159.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" text="Check Status" />
-      <Button fx:id="editProfile" layoutX="132.0" layoutY="258.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" text="Edit Profile" />
+      <Button fx:id="changeAppointment" layoutX="235.0" layoutY="159.0" mnemonicParsing="false" onAction="#setNotSupported" prefHeight="43.0" prefWidth="130.0" text="Change Appointment" />
+      <Button fx:id="checkStatus" layoutX="403.0" layoutY="159.0" mnemonicParsing="false" onAction="#setNotSupported" prefHeight="43.0" prefWidth="130.0" text="Check Status" />
+      <Button fx:id="editProfile" layoutX="132.0" layoutY="258.0" mnemonicParsing="false" onAction="#setNotSupported" prefHeight="43.0" prefWidth="130.0" text="Edit Profile" />
       <Button fx:id="changePassword" layoutX="338.0" layoutY="258.0" mnemonicParsing="false" onAction="#setChangePasswordScreen" prefHeight="43.0" prefWidth="130.0" text="Change Password" />
       <Text layoutX="260.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome ">
          <font>

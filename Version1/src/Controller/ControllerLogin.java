@@ -41,7 +41,6 @@ public class ControllerLogin implements Initializable {
 	private void authenticate(ActionEvent event) throws IOException {
 		Model.UserData userData = new UserData();
 		Model.ProfessionalUserData professionalUserData = new ProfessionalUserData();
-//        Model.StudyGroupData studyGroupData = new StudyGroupData();
 
 		if (!userData.searchUsersData(usernameField.getText()).getUsername().isEmpty() && userData.searchUsersData(usernameField.getText()).getUsername().equals(usernameField.getText()) && userData.searchUsersData(usernameField.getText()).getPassword().equals(passwordField.getText())) {
 			//Checks if user is blank, then checks if username and password match to database

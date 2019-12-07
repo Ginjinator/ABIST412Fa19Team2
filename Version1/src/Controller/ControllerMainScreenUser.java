@@ -37,8 +37,7 @@ public class ControllerMainScreenUser implements Initializable {
 	@FXML
 	private void setToSignedOut(ActionEvent event) throws IOException {
 		ControllerMainEmpty.user = new User();
-		Controller.loadScreen("ControllerLogin.fxml", event);
-
+		Controller.loadScreen("LoginScreen.fxml", event);
 	}
 
 	@FXML
@@ -49,6 +48,11 @@ public class ControllerMainScreenUser implements Initializable {
 	@FXML
 	private void setMakeAppointmentScreen(ActionEvent event) throws IOException {
 		Controller.loadScreen("MainOpenAppointments.fxml", event);
+	}
+
+	@FXML
+	private void setNotSupported(ActionEvent event) throws IOException {
+		Controller.loadScreen("FeatureNotSupportedYet.fxml", event);
 	}
 
 	@Override

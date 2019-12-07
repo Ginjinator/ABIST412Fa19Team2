@@ -1,7 +1,6 @@
 package Controller;
 
 import Model.ProfessionalUser;
-import Model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -46,19 +45,14 @@ public class ControllerMainScreenProfUser implements Initializable {
 		Controller.loadScreen("ChangePasswordScreen.fxml", event);
 	}
 
+	@FXML
+	private void setNotSupportedYet(ActionEvent event) throws IOException {
+		Controller.loadScreen("FeatureNotSupportedYet.fxml", event);
+	}
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-        /*
-        try {
-//            vBox.getChildren().clear();
-            for(int i = 0; i < ControllerMainEmpty.studyGroupData.getStudyGroupData().size(); i++){
-                ControllerMainEmpty.studyGroup = ControllerMainEmpty.studyGroupData.getStudyGroupData().get(i);
-                vBox.getChildren().add(FXMLLoader.load(View.class.getResource("StudyGroupCard.fxml")));
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(ControllerMainScreenUser.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        */
+
 	}
 
 }
