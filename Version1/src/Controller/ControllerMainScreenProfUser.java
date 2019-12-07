@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.ProfessionalUser;
+import Model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -32,7 +33,13 @@ public class ControllerMainScreenProfUser implements Initializable {
 	@FXML
 	private Button signOutButton;
 
-	public static ProfessionalUser professionalUser = new ProfessionalUser();
+
+	@FXML
+	private void setToSignedOut(ActionEvent event) throws IOException {
+		ControllerMainEmpty.profUser = new ProfessionalUser();
+		Controller.loadScreen("ControllerLogin.fxml", event);
+
+	}
 
 	@FXML
 	private void setChangePasswordScreen(ActionEvent event) throws IOException {
