@@ -1,6 +1,7 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class ProfessionalUser implements Serializable {
     private String firstName;
@@ -8,6 +9,7 @@ public class ProfessionalUser implements Serializable {
     private String username;
     private String password;
     private Schedule schedule;
+    private ArrayList<Appointment> appointments = new ArrayList<>();
     //private ArrayList<ProfessionalUserGroup> professionalGroup;
 
     /*public User(String firstName, String lastName, String username, String password, ArrayList<StudyGroup> userGroups, Schedule schedule){
@@ -51,6 +53,18 @@ public class ProfessionalUser implements Serializable {
         //this.userGroups = user.getUserGroups();
     }
 
+    public void addAppointment(Appointment appointment) {
+        this.appointments.add(appointment);
+    }
+
+    public ArrayList<Appointment> getAppointments() {
+        return this.appointments;
+    }
+
+    public void deleteAppointment(int Index) {
+        this.appointments.remove(Index);
+
+    }
     public String getFirstName() {
         return firstName;
     }

@@ -1,22 +1,19 @@
 package Controller;
 
+import Model.Appointment;
 import Model.ProfessionalUserData;
-import javafx.application.Application;
+import Model.Schedule;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.event.ActionEvent;
-import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.ResourceBundle;
+
 
 public class ControllerMakeAppointment {
 
@@ -36,6 +33,7 @@ public class ControllerMakeAppointment {
 
 
 	public void initialize() {
+		System.out.println("User: " + ControllerMainEmpty.user);
 		//times
 		List<String> list = new ArrayList<String>();
 		list.add("08:00");
@@ -76,9 +74,35 @@ public class ControllerMakeAppointment {
 
 	@FXML
 	private void setAppointmentButton(ActionEvent event) throws IOException {
+
 		String time = this.choice.getSelectionModel().getSelectedItem().toString();
 		LocalDate date = datePicker.getValue();
-		String doctor = this.doctor.getSelectionModel().getSelectedItem().toString();
-		Controller.loadScreen("MainScreenUser.fxml", event);
+		int doctor = this.doctor.getSelectionModel().getSelectedIndex();
+		boolean matchFound = false;
+
+		Schedule sched = new Schedule();
+		Model.ProfessionalUserData profUser = new Model.ProfessionalUserData();
+
+		ArrayList<Appointment> appointmentsForDoctor = profUser.getProfessionalUser(doctor).getAppointments();
+
+		for (Appointment i : appointmentsForDoctor) {
+			if ((i.getDate().equals(date)) && (i.getTime().equals(time) && i.getUser().getUsername().equals(ControllerMainEmpty.user.getUsername())))
+				matchFound = true;
+		}
+
+		if (!matchFound) {
+			Appointment appointment = new Appointment(time, date, ControllerMainEmpty.user);
+			System.out.println("Appointment made for username " + ControllerMainEmpty.user.getUsername());
+			profUser.getProfessionalUser(doctor).addAppointment(appointment);
+			Controller.loadScreen("MainScreenUser.fxml", event);
+		}
+
+		if (matchFound) {
+			Alert a = new Alert(Alert.AlertType.NONE);
+			a.setContentText("You have selected an existing appointment. Please try again.");
+			a.setAlertType(Alert.AlertType.ERROR);
+			a.show();
+
+		}
 	}
 }

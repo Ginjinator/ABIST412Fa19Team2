@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class ProfessionalUserData {
+    private static ArrayList<ProfessionalUser> professionalUserData = new ArrayList<>();
     /**
      * @return the professionalUserData
      */
@@ -17,7 +18,7 @@ public class ProfessionalUserData {
     public static void setProfessionalUserData(ArrayList<ProfessionalUser> aUsersData) {
         professionalUserData = aUsersData;
     }
-    private static ArrayList<ProfessionalUser> professionalUserData = new ArrayList<>();
+
     String usersDataFileName = "UsersData.ser";
 
     public ProfessionalUserData() {
@@ -105,6 +106,10 @@ public class ProfessionalUserData {
             names.add(i.getFirstName() + " " + i.getLastName());
         }
         return names;
+    }
+
+    public ProfessionalUser getProfessionalUser(int index) {
+        return getProfessionalUserData().get(index);
     }
 
 
