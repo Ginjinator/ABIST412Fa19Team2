@@ -83,10 +83,24 @@ public class ControllerMakeAppointment {
 		Model.ProfessionalUserData profUser = new Model.ProfessionalUserData();
 
 		ArrayList<Appointment> appointmentsForDoctor = profUser.getProfessionalUser(doctor).getAppointments();
-
+		ArrayList<Schedule> unAvailableSchedule = profUser.getProfessionalUser(doctor).getScheduleData().getUnavailableSchedule();
+		ArrayList<Schedule> unavailableDays = profUser.getProfessionalUser(doctor).getScheduleData().getOffDays();
 		for (Appointment i : appointmentsForDoctor) {
 			if (((i.getDate().compareTo(date)) == 0) && (i.getTime().equals(time) && i.getUser().getUsername().equals(ControllerMainEmpty.user.getUsername())))
 				matchFound = true;
+
+			if (!matchFound) { //checks if match hasn't been found, since there is no point in executing the code since it will show an error anyway
+
+				for (Schedule u : unAvailableSchedule) {
+					if ((i.getDate().compareTo(u.getUnavailableDate()) == 0) && (i.getTime().equals(u.getTimeUnavailable())))
+						matchFound = true;
+				}
+
+				for (Schedule off : unavailableDays) {
+					if ((i.getDate().compareTo(off.getUnavailableDate()) == 0))
+						matchFound = true;
+				}
+			}
 		}
 
 		if (!matchFound) {

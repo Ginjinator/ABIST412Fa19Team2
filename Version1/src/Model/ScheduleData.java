@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 /*
 	This class contains the unavailable schedule for a professional user.
-	A schedule is a specified unavailable date and time.
+	A schedule is a specified unavailable date and/or time. Time isn't necessary when only fetching date.
 	unavailableSchedule includes specific dates and times.
 	offDays includes WHOLE days off.
 	Both are arraylists of schedule.
