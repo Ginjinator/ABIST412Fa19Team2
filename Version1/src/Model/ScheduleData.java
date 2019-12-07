@@ -9,7 +9,7 @@ import java.util.ArrayList;
 	A schedule is a specified unavailable date and/or time. Time isn't necessary when only fetching date.
 	unavailableSchedule includes specific dates and times.
 	offDays includes WHOLE days off.
-	Both are arraylists of schedule.
+	Both are arraylists of schedule object.
 
  */
 

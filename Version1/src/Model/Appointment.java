@@ -3,6 +3,12 @@ package Model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+/*
+	An appointment is created in the ControllerMakeAppointment class. These are added to the ProfessionalUser class
+	and normal user class. Both user classes have methods to retrieve their appointments via arraylist. Appointments contain
+	what user has the appointment, what professional user has the appointment, and the time and date.
+ */
+
 public class Appointment implements Serializable {
 	private String time = "";
 	private LocalDate date;

@@ -2,7 +2,13 @@ package Model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+/*
+This is an object used in the "ScheduleDate" class. The "ScheduleData" class stores this object in TWO arraylists: unAvailableSchedule
+and offDays. In offDays, only the date parameter is used because offDays include the whole day and the make appointment controller only
+checks for the date in the offDays arraylist. In the unAvailableSchedule arraylist, the make appointment controller checks BOTH DATE AND TIME.
 
+Schedule includes the ability to add only a time and date to itself. See parameters. The "Appointment" class is similar but a lot more detailed.
+ */
 
 
 /**
