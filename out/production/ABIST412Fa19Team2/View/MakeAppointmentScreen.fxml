@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.*?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerMainScreen">
+    <children>
+        <Button layoutX="315.0" layoutY="349.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="136.0" text="Confirm Appointment" />
+        <Button layoutX="179.0" layoutY="349.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="117.0" text="Cancel" textFill="#e13333" />
+        <Text layoutX="166.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Make An Appointment" textAlignment="CENTER" wrappingWidth="268.0205078125">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Text>
+        <DatePicker layoutX="316.0" layoutY="115.0" prefHeight="145.0" prefWidth="250.0" />
+        <Text layoutX="176.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please fill in the following information." textAlignment="CENTER" wrappingWidth="240.234375">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <Text layoutX="25.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" wrappingWidth="281.234375">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <Text layoutX="25.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" wrappingWidth="160.1171875">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <Text layoutX="25.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number:" wrappingWidth="187.0000000000001">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <TextField layoutX="34.0" layoutY="108.0" prefHeight="27.0" prefWidth="225.0" />
+        <TextField layoutX="34.0" layoutY="174.0" prefHeight="27.0" prefWidth="225.0" />
+        <TextField layoutX="34.0" layoutY="240.0" prefHeight="27.0" prefWidth="225.0" />
+        <Separator layoutX="160.0" layoutY="54.0" prefHeight="4.0" prefWidth="281.0" />
+        <Text layoutX="358.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Appointment Date :" textAlignment="CENTER" wrappingWidth="167.0">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+        <ChoiceBox layoutX="34.0" layoutY="302.0" prefHeight="27.0" prefWidth="225.0" />
+        <Text layoutX="25.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Providor:" wrappingWidth="187.0000000000001">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Text>
+    </children>
+</Pane>
+
