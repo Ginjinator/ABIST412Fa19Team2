@@ -19,7 +19,7 @@ public class ProfessionalUserData implements Serializable {
         professionalUserData = aUsersData;
     }
 
-    String usersDataFileName = "UsersData.ser";
+    String usersDataFileName = "ProfessionalUsersData.ser";
 
     public ProfessionalUserData() {
 
