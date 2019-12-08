@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="View.ApproveAppointmentScreen"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="367.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerApproveAppointment">
+   <children>
+      <ListView layoutX="57.0" layoutY="111.0" prefHeight="200.0" prefWidth="200.0" />
+      <Text layoutX="65.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Open Appointment Requests" wrappingWidth="183.69140625">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <Button layoutX="339.0" layoutY="111.0" mnemonicParsing="false" onAction="#setApproveAppointment" prefHeight="38.0" prefWidth="122.0" text="Approve" />
+      <Button layoutX="339.0" layoutY="192.0" mnemonicParsing="false" onAction="#setDenyAppointment" prefHeight="38.0" prefWidth="122.0" text="Deny" />
+      <Button layoutX="339.0" layoutY="273.0" mnemonicParsing="false" onAction="#setMainScreen" prefHeight="38.0" prefWidth="122.0" text="Go Back" />
+   </children>
 </AnchorPane>
