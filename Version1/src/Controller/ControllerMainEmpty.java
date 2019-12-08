@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 public class ControllerMainEmpty implements Initializable {
 
 	@FXML
-	private Button homeButtton;
+	private Button homeButton;
 	@FXML
 	private Button subButton;
 	@FXML

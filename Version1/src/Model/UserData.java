@@ -1,7 +1,9 @@
 package Model;
 
 import java.io.*;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class UserData implements Serializable {
 
@@ -100,5 +102,51 @@ public class UserData implements Serializable {
         write();
     }
 
+    // Read User data from Azure database
+    protected List<String> connectToDatabase(String... strings) {
+
+        List<String> userLoginQueryResults = new ArrayList<>();
+
+        String databaseURL = " ;" +
+                "DatabaseName = IST412Team2SchedulerDatabase;" +
+                "user = ist412admin;" +
+                "password = Pennstate1234;" +
+                "encrypt = true; trustServerCertificate = false;" +
+                "hostNameInCertificate = *.database.windows.net;" +
+                "loginTimeout = 60;";
+
+        try {
+            // Create the connection the database
+            Connection databaseConnection = DriverManager.getConnection(databaseURL);
+            Statement statement = databaseConnection.createStatement();
+            String selectSQL = "SELECT * FROM UserLogin";
+            ResultSet resultSet = statement.executeQuery(selectSQL);
+
+            while (resultSet.next()) {
+                String UserID = resultSet.getString("UserID");
+                String FirstName = resultSet.getString("FirstName");
+                String LastName = resultSet.getString("LastName");
+                String Email = resultSet.getString("Email");
+                String Username = resultSet.getString("Username");
+                String UserPassword = resultSet.getString("UserPassword");
+                String ConfirmPassword = resultSet.getString("ConfirmPassword");
+
+                // Add new user information to database
+                userLoginQueryResults.add(UserID);
+                userLoginQueryResults.add(FirstName);
+                userLoginQueryResults.add(LastName);
+                userLoginQueryResults.add(Email);
+                userLoginQueryResults.add(Username);
+                userLoginQueryResults.add(UserPassword);
+                userLoginQueryResults.add(ConfirmPassword);
+            }
+            databaseConnection.close();
+            statement.close();
+            resultSet.close();
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return userLoginQueryResults;
+    }
 }
 

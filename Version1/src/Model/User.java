@@ -117,7 +117,5 @@ public class User implements Serializable{
         this.appointments.remove(Index);
 
     }
-
-
 }
 
