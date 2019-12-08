@@ -1,5 +1,5 @@
 package Controller;
-
+import Model.UserData;
 import Model.ProfessionalUser;
 import Model.ProfessionalUserData;
 import Model.User;
@@ -53,7 +53,10 @@ public class ControllerSignUp {
 				//User creation and added to Database
 				User user = new User(firstNameField.getText(), lastNameField.getText(), usernameField.getText(), passwordField.getText(), phoneNumField.getText());
 				Model.UserData userData = new Model.UserData();
+				userData.read();
 				userData.addUser(user);
+				userData.write();
+
 				System.out.println("Added a regular user");
 			}
 
@@ -63,6 +66,7 @@ public class ControllerSignUp {
 				Model.ProfessionalUserData profUserData = new Model.ProfessionalUserData();
 				profUserData.addUser(user);
 				System.out.println("Added a professional user");
+
 			}
 			//Screen Swap
 			Controller.loadScreen("LoginScreen.fxml", event);

@@ -40,8 +40,9 @@ public class ControllerLogin implements Initializable {
 	@FXML
 	private void authenticate(ActionEvent event) throws IOException {
 		Model.UserData userData = new UserData();
+		userData.read();
 		Model.ProfessionalUserData professionalUserData = new ProfessionalUserData();
-
+		professionalUserData.read();
 		if (!userData.searchUsersData(usernameField.getText()).getUsername().isEmpty() && userData.searchUsersData(usernameField.getText()).getUsername().equals(usernameField.getText()) && userData.searchUsersData(usernameField.getText()).getPassword().equals(passwordField.getText())) {
 			//Checks if user is blank, then checks if username and password match to database
 			Controller.loadScreen("MainScreenUser.fxml", event);
@@ -50,7 +51,7 @@ public class ControllerLogin implements Initializable {
 		} else if (!professionalUserData.searchUsersData(usernameField.getText()).getUsername().isEmpty() && professionalUserData.searchUsersData(usernameField.getText()).getUsername().equals(usernameField.getText()) && professionalUserData.searchUsersData(usernameField.getText()).getPassword().equals(passwordField.getText())) {
 			Controller.loadScreen("MainScreenProfUser.fxml", event);
 			ControllerMainEmpty.profUser = professionalUserData.searchUsersData(usernameField.getText());
-			ControllerMainEmpty.user = new User();
+			//ControllerMainEmpty.user = new User();
 		} else {
 			usernameField.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
 			passwordField.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));

@@ -10,27 +10,30 @@ public class UserData implements Serializable {
     /**
      * @return the usersData
      */
-    public static ArrayList<User> getUsersData() {
+    public  ArrayList<User> getUsersData() {
         return usersData;
     }
 
     /**
      * @param aUsersData the usersData to set
      */
-    public static void setUsersData(ArrayList<User> aUsersData) {
+    public  void setUsersData(ArrayList<User> aUsersData) {
         usersData = aUsersData;
     }
-    private static ArrayList<User> usersData = new ArrayList<>();
+    private  ArrayList<User> usersData = new ArrayList<>();
     String usersDataFileName = "UsersData.ser";
 
     public UserData() {
 
         this.read();
+        /*
         if(usersData.isEmpty()|| usersData == null){
 //        this.createTestUsersData();
             this.write();
             this.read();
         }
+        */
+
     }
 
     private void createTestUsersData() {
@@ -98,7 +101,7 @@ public class UserData implements Serializable {
     }
 
     public void addUser(User user){
-        getUsersData().add(user);
+        this.usersData.add(user);
         write();
     }
 
