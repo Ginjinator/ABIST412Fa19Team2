@@ -14,11 +14,13 @@ public class Appointment implements Serializable {
 	private LocalDate date;
 	private User user;
 	private ProfessionalUser profUser;
+	private String status = "";
 
-	public Appointment(String time, LocalDate date, User user) {
+	public Appointment(String time, LocalDate date, User user, String status) {
 		this.time = time;
 		this.date = date;
 		this.user = user;
+		this.status = status;
 	}
 
 	public String getTime() {
@@ -52,4 +54,8 @@ public class Appointment implements Serializable {
 	public void setProfUser(ProfessionalUser profUser) {
 		this.profUser = profUser;
 	}
+
+	public String getStatus() { return status; }
+
+	public void setStatus(String status) { this.status = status; }
 }

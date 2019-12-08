@@ -107,7 +107,7 @@ public class ControllerMakeAppointment {
 		}
 
 		if (!matchFound) {
-			Appointment appointment = new Appointment(time, date, ControllerMainEmpty.user);
+			Appointment appointment = new Appointment(time, date, ControllerMainEmpty.user, "Awaiting Approval");
 			appointment.setProfUser(profUser.getProfessionalUser(doctor));
 			System.out.println("Appointment made for username " + ControllerMainEmpty.user.getUsername() + " with " + appointment.getProfUser().getFullName());
 			profUser.getProfessionalUser(doctor).addAppointment(appointment);
