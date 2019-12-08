@@ -20,7 +20,7 @@ public class ControllerApproveAppointment {
 
     @FXML
     private void setApproveAppointment(ActionEvent event) throws IOException {
-
+        //approve appointment
     }
 
     @FXML
