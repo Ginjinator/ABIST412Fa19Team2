@@ -107,7 +107,7 @@ public class UserData implements Serializable {
 
         List<String> userLoginQueryResults = new ArrayList<>();
 
-        String databaseURL = " ;" +
+        String databaseURL = "jdbc:jtds:sqlserver:ist412team2.database.windows.net:1433/IST412Team2SchedulerDatabase;" +
                 "DatabaseName = IST412Team2SchedulerDatabase;" +
                 "user = ist412admin;" +
                 "password = Pennstate1234;" +
