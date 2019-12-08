@@ -1,9 +1,12 @@
 package Model;
 
 import java.io.*;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProfessionalUserData implements Serializable {
+    private String usersDataFileName = "ProfessionalUsersData.ser";
     private static ArrayList<ProfessionalUser> professionalUserData = new ArrayList<>();
     /**
      * @return the professionalUserData
@@ -19,7 +22,7 @@ public class ProfessionalUserData implements Serializable {
         professionalUserData = aUsersData;
     }
 
-    String usersDataFileName = "ProfessionalUsersData.ser";
+
 
     public ProfessionalUserData() {
 
@@ -113,4 +116,52 @@ public class ProfessionalUserData implements Serializable {
     }
 
 
+
+
+    // Read User data from Azure database
+    protected List<String> connectToDatabase(String... strings) {
+
+        List<String> userLoginQueryResults = new ArrayList<>();
+
+        String databaseURL = "jdbc:jtds:sqlserver:ist412team2.database.windows.net:1433/IST412Team2SchedulerDatabase;" +
+                "DatabaseName = IST412Team2SchedulerDatabase;" +
+                "user = ist412admin;" +
+                "password = Pennstate1234;" +
+                "encrypt = true; trustServerCertificate = false;" +
+                "hostNameInCertificate = *.database.windows.net;" +
+                "loginTimeout = 60;";
+
+        try {
+            // Create the connection the database
+            Connection databaseConnection = DriverManager.getConnection(databaseURL);
+            Statement statement = databaseConnection.createStatement();
+            String selectSQL = "SELECT * FROM UserLogin";
+            ResultSet resultSet = statement.executeQuery(selectSQL);
+
+            while (resultSet.next()) {
+                String UserID = resultSet.getString("UserID");
+                String FirstName = resultSet.getString("FirstName");
+                String LastName = resultSet.getString("LastName");
+                String Email = resultSet.getString("Email");
+                String Username = resultSet.getString("Username");
+                String UserPassword = resultSet.getString("UserPassword");
+                String ConfirmPassword = resultSet.getString("ConfirmPassword");
+
+                // Add new user information to database
+                userLoginQueryResults.add(UserID);
+                userLoginQueryResults.add(FirstName);
+                userLoginQueryResults.add(LastName);
+                userLoginQueryResults.add(Email);
+                userLoginQueryResults.add(Username);
+                userLoginQueryResults.add(UserPassword);
+                userLoginQueryResults.add(ConfirmPassword);
+            }
+            databaseConnection.close();
+            statement.close();
+            resultSet.close();
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return userLoginQueryResults;
+    }
 }

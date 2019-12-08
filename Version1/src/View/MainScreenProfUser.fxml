@@ -18,7 +18,7 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Button fx:id="changeAvailability" layoutX="67.0" layoutY="159.0" mnemonicParsing="false" onAction="" prefHeight="43.0" prefWidth="130.0" text="Change Availability" />
+      <Button fx:id="changeAvailability" layoutX="67.0" layoutY="159.0" mnemonicParsing="false"  prefHeight="43.0" prefWidth="130.0" text="Change Availability" />
       <Text layoutX="260.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Main Menu">
          <font>
             <Font size="16.0" />
