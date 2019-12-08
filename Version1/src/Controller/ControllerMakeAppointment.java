@@ -123,4 +123,9 @@ public class ControllerMakeAppointment {
 
 		}
 	}
+
+	@FXML
+	private void setMainMenu(ActionEvent event) throws IOException {
+		Controller.loadScreen("MainScreenUser.fxml", event);
+	}
 }

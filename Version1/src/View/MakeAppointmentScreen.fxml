@@ -3,10 +3,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.*?>
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerMainScreen">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerMakeAppointment">
     <children>
         <Button layoutX="315.0" layoutY="349.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="136.0" text="Confirm Appointment" />
-        <Button layoutX="179.0" layoutY="349.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="117.0" text="Cancel" textFill="#e13333" />
+        <Button fx:id="cancelButton" layoutX="179.0" layoutY="349.0" mnemonicParsing="false" onAction="#setMainMenu" prefHeight="37.0" prefWidth="117.0" text="Cancel" textFill="#e13333" />
         <Text layoutX="166.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Make An Appointment" textAlignment="CENTER" wrappingWidth="268.0205078125">
             <font>
                 <Font size="18.0" />

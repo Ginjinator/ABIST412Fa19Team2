@@ -18,6 +18,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -89,6 +90,11 @@ public class ControllerSignUp {
 				passwordConfirmationField.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
 			}
 		}
+	}
+
+	@FXML
+	private void setLogin(ActionEvent event) throws IOException {
+		Controller.loadScreen("LoginScreen.fxml", event);
 	}
 
 //    //######################All Main SCREEN###########################
