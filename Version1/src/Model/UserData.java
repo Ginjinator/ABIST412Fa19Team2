@@ -3,7 +3,7 @@ package Model;
 import java.io.*;
 import java.util.ArrayList;
 
-public class UserData {
+public class UserData implements Serializable {
 
     /**
      * @return the usersData

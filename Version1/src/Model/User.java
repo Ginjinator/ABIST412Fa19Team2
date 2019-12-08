@@ -1,6 +1,7 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class User implements Serializable{
 
@@ -9,6 +10,7 @@ public class User implements Serializable{
     private String username;
     private String password;
     private String phoneNumber;
+    private ArrayList<Appointment> appointments = new ArrayList<>();
 
     //private ArrayList<StudyGroup> userGroups;
 
@@ -103,30 +105,18 @@ public class User implements Serializable{
 
     public Boolean isProfessional(){ return false; }
 
-    /*
-    public ArrayList<StudyGroup> addtoGroup(StudyGroup studyGroup){
-        userGroups.add(studyGroup);
-        return userGroups;
+    public void addAppointment(Appointment appointment) {
+        this.appointments.add(appointment);
     }
 
-    public ArrayList<StudyGroup> removeFromGroup(StudyGroup studyGroup){
-        int index = searchStudyGroup(studyGroup);
-        if((userGroups.size() > 0) && (index >= 0)){
-            userGroups.remove(index);
-        }
-        return userGroups;
+    public ArrayList<Appointment> getAppointments() {
+        return this.appointments;
     }
 
-    public int searchStudyGroup(StudyGroup studyGroup){
-        for(int i = 0;i < userGroups.size();i++){
-            if(userGroups.get(i).equals(studyGroup)){
-                return i;
-            }
-        }
-        return -1;
-    }
-    */
+    public void deleteAppointment(int Index) {
+        this.appointments.remove(Index);
 
+    }
 
 
 }

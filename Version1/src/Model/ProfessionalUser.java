@@ -1,13 +1,16 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class ProfessionalUser implements Serializable {
     private String firstName;
     private String lastName;
     private String username;
     private String password;
-    private Schedule schedule;
+    // private Schedule schedule;
+    private ScheduleData schedule = new ScheduleData();
+    private ArrayList<Appointment> appointments = new ArrayList<>();
     //private ArrayList<ProfessionalUserGroup> professionalGroup;
 
     /*public User(String firstName, String lastName, String username, String password, ArrayList<StudyGroup> userGroups, Schedule schedule){
@@ -20,6 +23,7 @@ public class ProfessionalUser implements Serializable {
     }
      */
 
+    /*
     public ProfessionalUser(String firstName, String lastName, String username, String password, Schedule schedule){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -27,6 +31,7 @@ public class ProfessionalUser implements Serializable {
         this.password = password;
         this.schedule = schedule;
     }
+*/
 
     public ProfessionalUser(String firstName, String lastName, String username, String password){
         this.firstName = firstName;
@@ -51,6 +56,22 @@ public class ProfessionalUser implements Serializable {
         //this.userGroups = user.getUserGroups();
     }
 
+
+    public ScheduleData getScheduleData() {
+        return schedule;
+    }
+    public void addAppointment(Appointment appointment) {
+        this.appointments.add(appointment);
+    }
+
+    public ArrayList<Appointment> getAppointments() {
+        return this.appointments;
+    }
+
+    public void deleteAppointment(int Index) {
+        this.appointments.remove(Index);
+
+    }
     public String getFirstName() {
         return firstName;
     }
@@ -83,6 +104,7 @@ public class ProfessionalUser implements Serializable {
         this.password = password;
     }
 
+    /*
     public Schedule getSchedule(){
         return schedule;
     }
@@ -90,6 +112,7 @@ public class ProfessionalUser implements Serializable {
     public void setSchedule(Schedule schedule){
         this.schedule = schedule;
     }
+*/
 
     public String getFullName(){
         return getFirstName() + " " + getLastName();

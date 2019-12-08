@@ -29,27 +29,30 @@ public class ControllerMainScreenProfUser implements Initializable {
 	private Button changePassword;
 	@FXML
 	private Button changeAvailability;
+	@FXML
+	private Button signOutButton;
 
-	public static ProfessionalUser professionalUser = new ProfessionalUser();
+
+	@FXML
+	private void setToSignedOut(ActionEvent event) throws IOException {
+		ControllerMainEmpty.profUser = new ProfessionalUser();
+		Controller.loadScreen("ControllerLogin.fxml", event);
+
+	}
 
 	@FXML
 	private void setChangePasswordScreen(ActionEvent event) throws IOException {
 		Controller.loadScreen("ChangePasswordScreen.fxml", event);
 	}
 
+	@FXML
+	private void setNotSupportedYet(ActionEvent event) throws IOException {
+		Controller.loadScreen("FeatureNotSupportedYet.fxml", event);
+	}
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-        /*
-        try {
-//            vBox.getChildren().clear();
-            for(int i = 0; i < ControllerMainEmpty.studyGroupData.getStudyGroupData().size(); i++){
-                ControllerMainEmpty.studyGroup = ControllerMainEmpty.studyGroupData.getStudyGroupData().get(i);
-                vBox.getChildren().add(FXMLLoader.load(View.class.getResource("StudyGroupCard.fxml")));
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(ControllerMainScreenUser.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        */
+
 	}
 
 }

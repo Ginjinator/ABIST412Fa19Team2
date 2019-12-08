@@ -1,22 +1,20 @@
 package Controller;
 
+import Model.Appointment;
 import Model.ProfessionalUserData;
-import javafx.application.Application;
+import Model.Schedule;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.event.ActionEvent;
-import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.ResourceBundle;
+
 
 public class ControllerMakeAppointment {
 
@@ -36,9 +34,10 @@ public class ControllerMakeAppointment {
 
 
 	public void initialize() {
+		System.out.println("User: " + ControllerMainEmpty.user);
 		//times
 		List<String> list = new ArrayList<String>();
-		list.add("08:00");
+		list.add("08:00"); // 8:00 AM
 		list.add("08:30");
 		list.add("09:00");
 		list.add("09:30");
@@ -76,9 +75,52 @@ public class ControllerMakeAppointment {
 
 	@FXML
 	private void setAppointmentButton(ActionEvent event) throws IOException {
+
 		String time = this.choice.getSelectionModel().getSelectedItem().toString();
 		LocalDate date = datePicker.getValue();
-		String doctor = this.doctor.getSelectionModel().getSelectedItem().toString();
-		Controller.loadScreen("MainScreenUser.fxml", event);
+		int doctor = this.doctor.getSelectionModel().getSelectedIndex();
+		boolean matchFound = false;
+
+		Schedule sched = new Schedule();
+		Model.ProfessionalUserData profUser = new Model.ProfessionalUserData();
+
+		ArrayList<Appointment> appointmentsForDoctor = profUser.getProfessionalUser(doctor).getAppointments();
+		ArrayList<Schedule> unAvailableSchedule = profUser.getProfessionalUser(doctor).getScheduleData().getUnavailableSchedule();
+		ArrayList<Schedule> unavailableDays = profUser.getProfessionalUser(doctor).getScheduleData().getOffDays();
+
+		for (Appointment i : appointmentsForDoctor) {
+			if (((i.getDate().compareTo(date)) == 0) && (i.getTime().equals(time) && i.getUser().getUsername().equals(ControllerMainEmpty.user.getUsername())))
+				matchFound = true;
+
+			if (!matchFound) { //checks if match hasn't been found, since there is no point in executing the code since it will show an error anyway if match found
+
+				for (Schedule u : unAvailableSchedule) {
+					if ((i.getDate().compareTo(u.getUnavailableDate()) == 0) && (i.getTime().equals(u.getTimeUnavailable())))
+						matchFound = true;
+				}
+
+				for (Schedule off : unavailableDays) {
+					if ((i.getDate().compareTo(off.getUnavailableDate()) == 0))
+						matchFound = true;
+				}
+			}
+		}
+
+		if (!matchFound) {
+			Appointment appointment = new Appointment(time, date, ControllerMainEmpty.user);
+			appointment.setProfUser(profUser.getProfessionalUser(doctor));
+			System.out.println("Appointment made for username " + ControllerMainEmpty.user.getUsername() + " with " + appointment.getProfUser().getFullName());
+			profUser.getProfessionalUser(doctor).addAppointment(appointment);
+			ControllerMainEmpty.user.addAppointment(appointment);
+			Controller.loadScreen("MainScreenUser.fxml", event);
+		}
+
+		if (matchFound) {
+			Alert a = new Alert(Alert.AlertType.NONE);
+			a.setContentText("You have selected an existing appointment or an unavailable day or time. Please try again.");
+			a.setAlertType(Alert.AlertType.ERROR);
+			a.show();
+
+		}
 	}
 }

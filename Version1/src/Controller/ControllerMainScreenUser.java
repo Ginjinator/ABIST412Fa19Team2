@@ -29,8 +29,16 @@ public class ControllerMainScreenUser implements Initializable {
 	private Button checkStatus;
 	@FXML
 	private Button editProfile;
+	@FXML
+	private Button signOutButton;
 
 	public static User user = new User();
+
+	@FXML
+	private void setToSignedOut(ActionEvent event) throws IOException {
+		ControllerMainEmpty.user = new User();
+		Controller.loadScreen("LoginScreen.fxml", event);
+	}
 
 	@FXML
 	private void setChangePasswordScreen(ActionEvent event) throws IOException {
@@ -40,6 +48,11 @@ public class ControllerMainScreenUser implements Initializable {
 	@FXML
 	private void setMakeAppointmentScreen(ActionEvent event) throws IOException {
 		Controller.loadScreen("MainOpenAppointments.fxml", event);
+	}
+
+	@FXML
+	private void setNotSupported(ActionEvent event) throws IOException {
+		Controller.loadScreen("FeatureNotSupportedYet.fxml", event);
 	}
 
 	@Override

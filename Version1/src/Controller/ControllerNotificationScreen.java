@@ -25,9 +25,9 @@ public class ControllerNotificationScreen implements Initializable {
 	private void setToMainMenu(ActionEvent event) throws IOException {
 		// If user is professional
 		if (true) {
-			Controller.loadScreen("MainScreenProfUser.fxml", event);
-		} else {
 			Controller.loadScreen("MainScreenUser.fxml", event);
+		} else {
+			Controller.loadScreen("MainScreenProfUser.fxml", event);
 		}
 	}
 
