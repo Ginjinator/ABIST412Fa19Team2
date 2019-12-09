@@ -84,6 +84,7 @@ public class ControllerMakeAppointment {
 
 		Schedule sched = new Schedule();
 		Model.ProfessionalUserData profUser = new Model.ProfessionalUserData();
+		Model.UserData usrData = new Model.UserData();
 
 		ArrayList<Appointment> appointmentsForDoctor = profUser.getProfessionalUser(doctor).getAppointments();
 		ArrayList<Schedule> unAvailableSchedule = profUser.getProfessionalUser(doctor).getScheduleData().getUnavailableSchedule();
@@ -114,7 +115,7 @@ public class ControllerMakeAppointment {
 			System.out.println("Appointment made for username " + ControllerMainEmpty.user.getUsername() + " with " + appointment.getProfUser().getFullName());
 			//profUser.getProfessionalUser(doctor).addAppointment(appointment);
 			profUser.addAppointment(doctor, appointment);
-			ControllerMainEmpty.user.addAppointment(appointment);
+			usrData.addAppointment(appointment, ControllerMainEmpty.user);
 			System.out.println("added an appointment:" + profUser.getProfessionalUser(doctor).getAppointments());
 			Controller.loadScreen("MainScreenUser.fxml", event);
 		}

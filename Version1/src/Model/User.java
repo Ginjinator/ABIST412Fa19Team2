@@ -117,5 +117,17 @@ public class User implements Serializable{
         this.appointments.remove(Index);
 
     }
+
+    public void deleteAppointment(Appointment appt){
+        boolean bool = true;
+        int i = 0;
+        while(bool && i<appointments.size()){
+            if(appointments.get(i).equals(appt)){
+                appointments.remove(i);
+                bool=false;
+            }
+        }
+
+    }
 }
 

@@ -104,6 +104,23 @@ public class UserData implements Serializable {
         this.usersData.add(user);
         write();
     }
+    public void addAppointment(int index, Appointment appt){
+        this.getUsersData().get(index).addAppointment(appt);
+        write();
+    }
+
+    public void addAppointment(Appointment appt, User user){
+        User a = searchUsersData(user.getUsername());
+        a.addAppointment(appt);
+        write();
+    }
+
+    public void removeAppointment(int index, User user){
+        User a = searchUsersData(user.getUsername());
+        a.deleteAppointment(index);
+        write();
+    }
+
 
     // Read User data from Azure database
     protected List<String> connectToDatabase(String... strings) {

@@ -81,6 +81,18 @@ public class ProfessionalUser implements Serializable {
         return firstName;
     }
 
+
+    public void deleteAppointment(Appointment appt){
+    	boolean bool = true;
+    	int i = 0;
+    	while(bool && i<appointments.size()){
+    		if(appointments.get(i).equals(appt)){
+    			appointments.remove(i);
+    			bool=false;
+			}
+		}
+
+	}
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
