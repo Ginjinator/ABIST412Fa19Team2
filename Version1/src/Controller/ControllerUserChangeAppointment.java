@@ -25,18 +25,19 @@ public class ControllerUserChangeAppointment {
 
 	public void initialize() {
 		// Get correct professional user
-
+		UserData usrData = new UserData();
+		ProfessionalUserData profUsrData = new ProfessionalUserData();
 		User usr;
 		System.out.println("User: " + ControllerMainEmpty.user);
 		//times
 		List<String> list = new ArrayList<>();
-		usr = ControllerMainEmpty.user;
+		usr = usrData.searchUsersData(ControllerMainEmpty.user.getUsername());
 		appointments = usr.getAppointments();
 		System.out.println("Signed in as: " + usr.getFullName());
 		System.out.println(list);
 		for(Appointment a: appointments){
-			list.add(a.getUser().getFullName());
-			System.out.println(a.getUser().getFullName());
+			list.add(a.getProfUser().getFullName());
+			System.out.println(a.getProfUser().getFullName());
 		}
 		System.out.println(list);
 		ObservableList obList = FXCollections.observableList(list);
@@ -52,43 +53,37 @@ public class ControllerUserChangeAppointment {
 
 	@FXML
 	private void setDeleteAppointment(ActionEvent event) throws IOException {
-		User usr;
-		usr = ControllerMainEmpty.user;
+
+
+
+		UserData usrData = new UserData();
+		User usr = usrData.searchUsersData(ControllerMainEmpty.user.getUsername());
 		appointments = usr.getAppointments();
 		selectedAppointment = appointments.get(appointmentsList.getSelectionModel().getSelectedIndex());
 		ProfessionalUser docUsr = selectedAppointment.getProfUser();
 		ProfessionalUserData profUsrData = new ProfessionalUserData();
-		UserData usrData = new UserData();
+
 
 		profUsrData.removeAppointment( selectedAppointment,profUsrData.searchUsersData(docUsr.getUsername()));
 		usrData.removeAppointment(selectedAppointment, usrData.searchUsersData(ControllerMainEmpty.user.getUsername()));
 		usrData.searchUsersData(ControllerMainEmpty.user.getUsername()).deleteAppointment(selectedAppointment);
-
+		initialize();
 
 	}
 
 	@FXML
 	private void setChangeAppointment(ActionEvent event) throws IOException {
-		ProfessionalUser doc;
-		doc = ControllerMainEmpty.profUser;
-		appointments = doc.getAppointments();
+		UserData usrData = new UserData();
+		User usr = usrData.searchUsersData(ControllerMainEmpty.user.getUsername());
+		appointments = usr.getAppointments();
 		selectedAppointment = appointments.get(appointmentsList.getSelectionModel().getSelectedIndex());
-		ProfessionalUserData profUsers = new ProfessionalUserData();
-		profUsers.removeAppointment(appointmentsList.getSelectionModel().getSelectedIndex(), doc);
-		selectedAppointment.setStatus("Denied");
-		appointments = doc.getAppointments();
-		ArrayList<String> list = new ArrayList<>();
-		if(appointments.size()!=0)
-			for(Appointment a: appointments){
-				list.add(a.getUser().getFullName());
-				System.out.println(a.getUser().getFullName());
-			}
-		else {
-			list.clear();
-		}
-		ObservableList obList = FXCollections.observableList(list);
-		System.out.println("Observable list:" + obList);
-		this.appointmentsList.setItems(obList);
+		ProfessionalUser docUsr = selectedAppointment.getProfUser();
+		ProfessionalUserData profUsrData = new ProfessionalUserData();
+
+		profUsrData.removeAppointment( selectedAppointment,profUsrData.searchUsersData(docUsr.getUsername()));
+		usrData.removeAppointment(selectedAppointment, usrData.searchUsersData(ControllerMainEmpty.user.getUsername()));
+		usrData.searchUsersData(ControllerMainEmpty.user.getUsername()).deleteAppointment(selectedAppointment);
+		Controller.loadScreen("MainOpenAppointments.fxml", event);
 	}
 
 	@FXML

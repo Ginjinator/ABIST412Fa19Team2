@@ -134,5 +134,22 @@ public class User implements Serializable{
         System.out.println("appointments " + appointments);
 
     }
+
+    public Appointment findAppointment(Appointment appt) {
+        boolean bool = true;
+        int i = 0;
+        Appointment findAppt = new Appointment();
+        while (bool && i < appointments.size()) {
+            int compare = appointments.get(i).getAppointmentID().compareTo(appt.getAppointmentID());
+            if (compare == 0) {
+                findAppt = appointments.get(i);
+                bool = false;
+            }
+            i++;
+        }
+        return findAppt;
+
+
+    }
 }
 

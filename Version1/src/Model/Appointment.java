@@ -19,6 +19,11 @@ public class Appointment implements Serializable {
 	private String status = "";
 	private BigInteger appointmentID;
 
+
+	public Appointment(){
+
+	}
+
 	public Appointment(String time, LocalDate date, User user, String status) {
 		this.time = time;
 		this.date = date;

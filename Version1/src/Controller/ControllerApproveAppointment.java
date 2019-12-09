@@ -1,9 +1,6 @@
 package Controller;
 
-import Model.Appointment;
-import Model.ProfessionalUser;
-import Model.ProfessionalUserData;
-import Model.UserData;
+import Model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -26,12 +23,12 @@ public class ControllerApproveAppointment {
 
     public void initialize() {
         // Get correct professional user
-
+       ProfessionalUserData profUsers = new ProfessionalUserData();
         ProfessionalUser doc; //TODO Make this use the selected professional user
         System.out.println("User: " + ControllerMainEmpty.user);
         //times
         List<String> list = new ArrayList<>();
-        doc = ControllerMainEmpty.profUser;
+        doc = profUsers.searchUsersData(ControllerMainEmpty.profUser.getUsername());
         appointments = doc.getAppointments();
         System.out.println("Signed in as: " + doc.getFullName());
         System.out.println(list);
@@ -54,24 +51,31 @@ public class ControllerApproveAppointment {
     @FXML
     private void setApproveAppointment(ActionEvent event) throws IOException {
         ProfessionalUser doc;
-        doc = ControllerMainEmpty.profUser;
+        ProfessionalUserData profUsers = new ProfessionalUserData();
+        UserData usrData = new UserData();
+
+        doc = profUsers.searchUsersData(ControllerMainEmpty.profUser.getUsername());
         appointments = doc.getAppointments();
         selectedAppointment = appointments.get(appointmentsList.getSelectionModel().getSelectedIndex());
         selectedAppointment.setStatus("Approved");
+        User usr = usrData.searchUsersData(selectedAppointment.getUser().getUsername());
+        usrData.searchUsersData(ControllerMainEmpty.user.getUsername()).findAppointment(selectedAppointment).setStatus("Approved");
+        initialize();
     }
 
     @FXML
     private void setDenyAppointment(ActionEvent event) throws IOException {
         ProfessionalUser doc;
-        doc = ControllerMainEmpty.profUser;
+        ProfessionalUserData profUsers = new ProfessionalUserData();
+        UserData usrData = new UserData();
+
+        doc = profUsers.searchUsersData(ControllerMainEmpty.profUser.getUsername());
         appointments = doc.getAppointments();
         selectedAppointment = appointments.get(appointmentsList.getSelectionModel().getSelectedIndex());
-        Model.ProfessionalUserData profUsers = new ProfessionalUserData();
-        Model.UserData usrData = new UserData();
-        ProfessionalUser docUsr = selectedAppointment.getProfUser();
-        ProfessionalUserData profUsrData = new ProfessionalUserData();
-        profUsrData.searchUsersData(docUsr.getUsername()).deleteAppointment(selectedAppointment);
-        usrData.searchUsersData(ControllerMainEmpty.user.getUsername()).deleteAppointment(selectedAppointment);
+        User usr = usrData.searchUsersData(selectedAppointment.getUser().getUsername());
+        profUsers.removeAppointment(selectedAppointment, ControllerMainEmpty.profUser);
+        usrData.removeAppointment(selectedAppointment, selectedAppointment.getUser());
+        usr.deleteAppointment(selectedAppointment);
         selectedAppointment.setStatus("Denied");
         appointments = doc.getAppointments();
         ArrayList<String> list = new ArrayList<>();
@@ -86,6 +90,7 @@ public class ControllerApproveAppointment {
         ObservableList obList = FXCollections.observableList(list);
         System.out.println("Observable list:" + obList);
         this.appointmentsList.setItems(obList);
+        initialize();
     }
 
     @FXML
