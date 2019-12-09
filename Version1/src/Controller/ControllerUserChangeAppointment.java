@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 
 import java.io.IOException;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +37,9 @@ public class ControllerUserChangeAppointment {
 		System.out.println("Signed in as: " + usr.getFullName());
 		System.out.println(list);
 		for(Appointment a: appointments){
-			list.add(a.getProfUser().getFullName());
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
+			String formattedString = a.getDate().format(formatter);
+			list.add(a.getProfUser().getFullName() +" " + formattedString +" " + a.getTime());
 			System.out.println(a.getProfUser().getFullName());
 		}
 		System.out.println(list);

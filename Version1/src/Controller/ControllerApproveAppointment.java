@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.event.ActionEvent;
+
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.io.IOException;
 import java.util.List;
@@ -81,7 +83,10 @@ public class ControllerApproveAppointment {
         ArrayList<String> list = new ArrayList<>();
         if(appointments.size()!=0)
         for(Appointment a: appointments){
-            list.add(a.getUser().getFullName());
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
+            String formattedString = a.getDate().format(formatter);
+            list.add(a.getProfUser().getFullName() +" " + formattedString +" " + a.getTime());
+
             System.out.println(a.getUser().getFullName());
         }
         else {
