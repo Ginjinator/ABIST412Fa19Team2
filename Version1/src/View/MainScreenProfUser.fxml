@@ -5,11 +5,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-      prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="Controller.ControllerMainScreenProfUser">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerMainScreenProfUser">
    <children>
-      <Button fx:id="seeRequests" layoutX="235.0" layoutY="159.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" text="See Open Requests" />
+      <Button fx:id="seeRequests" layoutX="235.0" layoutY="159.0" mnemonicParsing="false" onAction="#setToOpenAppt" prefHeight="43.0" prefWidth="130.0" text="See Open Requests" />
       <Button fx:id="cancelAppointments" layoutX="403.0" layoutY="159.0" mnemonicParsing="false" onAction="#setNotSupportedYet" prefHeight="43.0" prefWidth="130.0" text="Cancel Appointments" />
       <Button fx:id="editProfile" layoutX="132.0" layoutY="258.0" mnemonicParsing="false" onAction="#setNotSupportedYet" prefHeight="43.0" prefWidth="130.0" text="Edit Profile" />
       <Button fx:id="changePassword" layoutX="338.0" layoutY="258.0" mnemonicParsing="false" onAction="#setChangePasswordScreen" prefHeight="43.0" prefWidth="130.0" text="Change Password" />
@@ -18,13 +16,12 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Button fx:id="changeAvailability" layoutX="67.0" layoutY="159.0" mnemonicParsing="false"  prefHeight="43.0" prefWidth="130.0" text="Change Availability" />
+      <Button fx:id="changeAvailability" layoutX="67.0" layoutY="159.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="130.0" text="Change Availability" />
       <Text layoutX="260.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Main Menu">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-       <Button fx:id="signOutButton" layoutX="502.0" layoutY="18.0" mnemonicParsing="false" onAction="#setToSignedOut"
-               text="Sign Out"/>
+       <Button fx:id="signOutButton" layoutX="502.0" layoutY="18.0" mnemonicParsing="false" onAction="#setToSignedOut" text="Sign Out" />
    </children>
 </Pane>

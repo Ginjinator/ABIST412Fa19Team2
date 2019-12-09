@@ -24,7 +24,7 @@ public class Appointment implements Serializable {
 	}
 
 	public String getTime() {
-		return time;
+		return this.time;
 	}
 
 	public void setTime(String time) {
@@ -32,7 +32,7 @@ public class Appointment implements Serializable {
 	}
 
 	public LocalDate getDate() {
-		return date;
+		return this.date;
 	}
 
 	public void setDate(LocalDate date) {
@@ -40,7 +40,7 @@ public class Appointment implements Serializable {
 	}
 
 	public User getUser() {
-		return user;
+		return this.user;
 	}
 
 	public void setUser(User user) {
@@ -48,14 +48,14 @@ public class Appointment implements Serializable {
 	}
 
 	public ProfessionalUser getProfUser() {
-		return profUser;
+		return this.profUser;
 	}
 
 	public void setProfUser(ProfessionalUser profUser) {
 		this.profUser = profUser;
 	}
 
-	public String getStatus() { return status; }
+	public String getStatus() { return this.status; }
 
 	public void setStatus(String status) { this.status = status; }
 }

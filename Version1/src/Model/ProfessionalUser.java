@@ -10,7 +10,7 @@ public class ProfessionalUser implements Serializable {
     private String password;
     // private Schedule schedule;
     private ScheduleData schedule = new ScheduleData();
-    private ArrayList<Appointment> appointments = new ArrayList<>();
+    private  ArrayList<Appointment> appointments = new ArrayList<>();
     //private ArrayList<ProfessionalUserGroup> professionalGroup;
 
     /*public User(String firstName, String lastName, String username, String password, ArrayList<StudyGroup> userGroups, Schedule schedule){
@@ -62,6 +62,10 @@ public class ProfessionalUser implements Serializable {
     }
     public void addAppointment(Appointment appointment) {
         this.appointments.add(appointment);
+
+        System.out.println("I added an appointment with "+ appointment.getUser().getFullName());
+        System.out.println(appointments);
+
     }
 
     public ArrayList<Appointment> getAppointments() {

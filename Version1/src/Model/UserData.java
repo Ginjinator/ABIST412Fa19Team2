@@ -142,6 +142,7 @@ public class UserData implements Serializable {
                 userLoginQueryResults.add(Username);
                 userLoginQueryResults.add(UserPassword);
                 userLoginQueryResults.add(ConfirmPassword);
+
             }
             databaseConnection.close();
             statement.close();

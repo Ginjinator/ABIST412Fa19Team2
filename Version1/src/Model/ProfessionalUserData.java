@@ -7,31 +7,32 @@ import java.util.List;
 
 public class ProfessionalUserData implements Serializable {
     private String usersDataFileName = "ProfessionalUsersData.ser";
-    private static ArrayList<ProfessionalUser> professionalUserData = new ArrayList<>();
+    private  ArrayList<ProfessionalUser> professionalUserData = new ArrayList<>();
     /**
      * @return the professionalUserData
      */
-    public static ArrayList<ProfessionalUser> getProfessionalUserData() {
-        return professionalUserData;
+    public  ArrayList<ProfessionalUser> getProfessionalUserData() {
+        return this.professionalUserData;
     }
 
     /**
      * @param aUsersData the professionalUserData to set
      */
-    public static void setProfessionalUserData(ArrayList<ProfessionalUser> aUsersData) {
+    public  void setProfessionalUserData(ArrayList<ProfessionalUser> aUsersData) {
         professionalUserData = aUsersData;
     }
 
 
 
     public ProfessionalUserData() {
-
+        super();
         this.read();
         if(professionalUserData.isEmpty()|| professionalUserData == null){
 //        this.createTestUsersData();
             this.write();
             this.read();
         }
+
     }
 
     private void createTestUsersData() {
@@ -103,18 +104,26 @@ public class ProfessionalUserData implements Serializable {
         write();
     }
 
-    public static ArrayList<String> getProfessionalUserDataNames() {
+    public  ArrayList<String> getProfessionalUserDataNames() {
         ArrayList<String> names = new ArrayList<>();
         for (ProfessionalUser i : getProfessionalUserData()) {
             names.add(i.getFirstName() + " " + i.getLastName());
         }
         return names;
+
     }
 
     public ProfessionalUser getProfessionalUser(int index) {
-        return getProfessionalUserData().get(index);
+
+        return this.getProfessionalUserData().get(index);
+
     }
 
+    public void addAppointment(int index, Appointment appt){
+        this.getProfessionalUserData().get(index).addAppointment(appt);
+        System.out.println(getProfessionalUser(index).getAppointments());
+        write();
+    }
 
 
 

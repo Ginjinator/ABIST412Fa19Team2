@@ -36,7 +36,7 @@ public class ControllerMakeAppointment {
 	public void initialize() {
 		System.out.println("User: " + ControllerMainEmpty.user);
 		//times
-		List<String> list = new ArrayList<String>();
+		List<String> list = new ArrayList<>();
 		list.add("08:00"); // 8:00 AM
 		list.add("08:30");
 		list.add("09:00");
@@ -66,7 +66,8 @@ public class ControllerMakeAppointment {
 		this.choice.setItems(obList);
 		this.choice.getSelectionModel().selectFirst();
 		//doctors
-		List<String> doctors = ProfessionalUserData.getProfessionalUserDataNames();
+		Model.ProfessionalUserData profUser = new Model.ProfessionalUserData();
+		List<String> doctors = profUser.getProfessionalUserDataNames();
 		obList = FXCollections.observableList(doctors);
 		this.doctor.setItems(obList);
 		this.doctor.getSelectionModel().selectFirst();
@@ -109,9 +110,12 @@ public class ControllerMakeAppointment {
 		if (!matchFound) {
 			Appointment appointment = new Appointment(time, date, ControllerMainEmpty.user, "Awaiting Approval");
 			appointment.setProfUser(profUser.getProfessionalUser(doctor));
+			appointment.setUser(ControllerMainEmpty.user);
 			System.out.println("Appointment made for username " + ControllerMainEmpty.user.getUsername() + " with " + appointment.getProfUser().getFullName());
-			profUser.getProfessionalUser(doctor).addAppointment(appointment);
+			//profUser.getProfessionalUser(doctor).addAppointment(appointment);
+			profUser.addAppointment(doctor, appointment);
 			ControllerMainEmpty.user.addAppointment(appointment);
+			System.out.println("added an appointment:" + profUser.getProfessionalUser(doctor).getAppointments());
 			Controller.loadScreen("MainScreenUser.fxml", event);
 		}
 

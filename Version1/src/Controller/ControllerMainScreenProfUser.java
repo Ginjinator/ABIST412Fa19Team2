@@ -46,6 +46,11 @@ public class ControllerMainScreenProfUser implements Initializable {
 	}
 
 	@FXML
+	private void setToOpenAppt(ActionEvent event) throws IOException {
+		Controller.loadScreen("ApproveAppointmentScreen.fxml", event);
+	}
+
+	@FXML
 	private void setNotSupportedYet(ActionEvent event) throws IOException {
 		Controller.loadScreen("FeatureNotSupportedYet.fxml", event);
 	}
