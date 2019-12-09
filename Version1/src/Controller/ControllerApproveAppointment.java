@@ -52,12 +52,35 @@ public class ControllerApproveAppointment {
 
     @FXML
     private void setApproveAppointment(ActionEvent event) throws IOException {
+        ProfessionalUser doc;
+        doc = ControllerMainEmpty.profUser;
+        appointments = doc.getAppointments();
+        selectedAppointment = appointments.get(appointmentsList.getSelectionModel().getSelectedIndex());
         selectedAppointment.setStatus("Approved");
     }
 
     @FXML
     private void setDenyAppointment(ActionEvent event) throws IOException {
+        ProfessionalUser doc;
+        doc = ControllerMainEmpty.profUser;
+        appointments = doc.getAppointments();
+        selectedAppointment = appointments.get(appointmentsList.getSelectionModel().getSelectedIndex());
+        Model.ProfessionalUserData profUsers = new ProfessionalUserData();
+        profUsers.removeAppointment(appointmentsList.getSelectionModel().getSelectedIndex(), doc);
         selectedAppointment.setStatus("Denied");
+        appointments = doc.getAppointments();
+        ArrayList<String> list = new ArrayList<>();
+        if(appointments.size()!=0)
+        for(Appointment a: appointments){
+            list.add(a.getUser().getFullName());
+            System.out.println(a.getUser().getFullName());
+        }
+        else {
+            list.clear();
+        }
+        ObservableList obList = FXCollections.observableList(list);
+        System.out.println("Observable list:" + obList);
+        this.appointmentsList.setItems(obList);
     }
 
     @FXML

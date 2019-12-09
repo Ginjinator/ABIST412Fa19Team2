@@ -125,6 +125,14 @@ public class ProfessionalUserData implements Serializable {
         write();
     }
 
+    public void removeAppointment(int index, ProfessionalUser profUser){
+        int indxUser =0;
+        ProfessionalUser a = searchUsersData(profUser.getUsername());
+        a.deleteAppointment(index);
+        System.out.println(getProfessionalUser(index).getAppointments());
+        write();
+    }
+
 
 
     // Read User data from Azure database

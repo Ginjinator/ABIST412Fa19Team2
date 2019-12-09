@@ -75,6 +75,7 @@ public class ProfessionalUser implements Serializable {
     public void deleteAppointment(int Index) {
         this.appointments.remove(Index);
 
+
     }
     public String getFirstName() {
         return firstName;

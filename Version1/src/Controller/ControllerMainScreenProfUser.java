@@ -36,7 +36,7 @@ public class ControllerMainScreenProfUser implements Initializable {
 	@FXML
 	private void setToSignedOut(ActionEvent event) throws IOException {
 		ControllerMainEmpty.profUser = new ProfessionalUser();
-		Controller.loadScreen("ControllerLogin.fxml", event);
+		Controller.loadScreen("LoginScreen.fxml", event);
 
 	}
 
