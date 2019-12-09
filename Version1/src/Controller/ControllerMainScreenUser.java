@@ -41,6 +41,12 @@ public class ControllerMainScreenUser implements Initializable {
 	}
 
 	@FXML
+	private void setToChangeAppt(ActionEvent event) throws IOException {
+		Controller.loadScreen("UserChangeAppointment.fxml", event);
+	}
+
+
+	@FXML
 	private void setChangePasswordScreen(ActionEvent event) throws IOException {
 		Controller.loadScreen("ChangePasswordScreen.fxml", event);
 	}

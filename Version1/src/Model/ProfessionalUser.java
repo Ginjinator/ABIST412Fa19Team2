@@ -86,11 +86,15 @@ public class ProfessionalUser implements Serializable {
     	boolean bool = true;
     	int i = 0;
     	while(bool && i<appointments.size()){
-    		if(appointments.get(i).equals(appt)){
+            int compare = appointments.get(i).getAppointmentID().compareTo(appt.getAppointmentID());
+            if(compare==0){
     			appointments.remove(i);
     			bool=false;
 			}
+    		i++;
 		}
+
+
 
 	}
     public void setFirstName(String firstName) {

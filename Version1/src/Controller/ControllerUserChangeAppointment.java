@@ -51,7 +51,7 @@ public class ControllerUserChangeAppointment {
 	}
 
 	@FXML
-	private void setApproveAppointment(ActionEvent event) throws IOException {
+	private void setDeleteAppointment(ActionEvent event) throws IOException {
 		User usr;
 		usr = ControllerMainEmpty.user;
 		appointments = usr.getAppointments();
@@ -59,13 +59,16 @@ public class ControllerUserChangeAppointment {
 		ProfessionalUser docUsr = selectedAppointment.getProfUser();
 		ProfessionalUserData profUsrData = new ProfessionalUserData();
 		UserData usrData = new UserData();
-		profUsrData.searchUsersData(docUsr.getUsername()).deleteAppointment(selectedAppointment);
+
+		profUsrData.removeAppointment( selectedAppointment,profUsrData.searchUsersData(docUsr.getUsername()));
+		usrData.removeAppointment(selectedAppointment, usrData.searchUsersData(ControllerMainEmpty.user.getUsername()));
 		usrData.searchUsersData(ControllerMainEmpty.user.getUsername()).deleteAppointment(selectedAppointment);
+
 
 	}
 
 	@FXML
-	private void setDenyAppointment(ActionEvent event) throws IOException {
+	private void setChangeAppointment(ActionEvent event) throws IOException {
 		ProfessionalUser doc;
 		doc = ControllerMainEmpty.profUser;
 		appointments = doc.getAppointments();
@@ -90,7 +93,7 @@ public class ControllerUserChangeAppointment {
 
 	@FXML
 	private void setMainScreen(ActionEvent event) throws IOException {
-		Controller.loadScreen("MainScreenProfUser.fxml", event);
+		Controller.loadScreen("MainScreenUser.fxml", event);
 	}
 
 

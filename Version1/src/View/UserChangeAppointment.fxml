@@ -13,8 +13,8 @@
          <font>
             <Font size="14.0" />
          </font></Text>
-      <Button fx:id="approveButton" layoutX="278.0" layoutY="85.0" mnemonicParsing="false" onAction="#setApproveAppointment" prefHeight="38.0" prefWidth="122.0" text="Change" />
-      <Button fx:id="denyButton" layoutX="278.0" layoutY="154.0" mnemonicParsing="false" onAction="#setDenyAppointment" prefHeight="38.0" prefWidth="122.0" text="Delete" />
+      <Button fx:id="approveButton" layoutX="278.0" layoutY="85.0" mnemonicParsing="false" onAction="#setChangeAppointment" prefHeight="38.0" prefWidth="122.0" text="Change" />
+      <Button fx:id="denyButton" layoutX="278.0" layoutY="154.0" mnemonicParsing="false" onAction="#setDeleteAppointment" prefHeight="38.0" prefWidth="122.0" text="Delete" />
       <Button fx:id="goBackButton" layoutX="278.0" layoutY="219.0" mnemonicParsing="false" onAction="#setMainScreen" prefHeight="38.0" prefWidth="122.0" text="Go Back" />
    </children>
 </AnchorPane>

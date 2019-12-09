@@ -90,6 +90,9 @@ public class UserData implements Serializable {
         return new User();
     }
 
+
+
+
     public void writeUser(String username, User user){
         for(int i = 0 ; i < getUsersData().size();i++){
             if (getUsersData().get(i).getUsername().equals(username)){
@@ -115,12 +118,11 @@ public class UserData implements Serializable {
         write();
     }
 
-    public void removeAppointment(int index, User user){
-        User a = searchUsersData(user.getUsername());
-        a.deleteAppointment(index);
+    public void removeAppointment(Appointment appt, User usr){
+        User a = searchUsersData(usr.getUsername());
+        a.deleteAppointment(appt);
         write();
     }
-
 
     // Read User data from Azure database
     protected List<String> connectToDatabase(String... strings) {
