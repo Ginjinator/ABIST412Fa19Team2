@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="367.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerUserChangeAppointment">
    <children>
-      <ListView fx:id="appointmentsList" layoutX="18.0" layoutY="73.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="appointmentsList" layoutX="18.0" layoutY="73.0" prefHeight="200.0" prefWidth="246.0" />
       <Text layoutX="26.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Appointments:" wrappingWidth="183.69140625">
          <font>
             <Font size="14.0" />

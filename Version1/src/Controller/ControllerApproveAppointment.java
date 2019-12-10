@@ -35,8 +35,11 @@ public class ControllerApproveAppointment {
         System.out.println("Signed in as: " + doc.getFullName());
         System.out.println(list);
         for(Appointment a: appointments){
-            list.add(a.getUser().getFullName());
-            System.out.println(a.getUser().getFullName());
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd LLLL yyyy");
+            String formattedString = a.getDate().format(formatter);
+            list.add(a.getProfUser().getFullName() +" " + formattedString +" " + a.getTime());
+
+            System.out.println(a.getProfUser().getFullName() +" " + formattedString +" " + a.getTime());
         }
         System.out.println(list);
         ObservableList obList = FXCollections.observableList(list);
@@ -87,7 +90,7 @@ public class ControllerApproveAppointment {
             String formattedString = a.getDate().format(formatter);
             list.add(a.getProfUser().getFullName() +" " + formattedString +" " + a.getTime());
 
-            System.out.println(a.getUser().getFullName());
+            System.out.println(a.getProfUser().getFullName() +" " + formattedString +" " + a.getTime());
         }
         else {
             list.clear();
